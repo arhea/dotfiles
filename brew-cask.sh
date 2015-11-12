@@ -24,7 +24,7 @@ brew cask install slack
 
 # dev
 brew cask install iterm2
-brew cask install sublime-text
+brew cask install sublime-text3
 brew cask install imagealpha
 brew cask install imageoptim
 brew cask install boot2docker
