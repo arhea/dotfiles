@@ -93,3 +93,6 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
+[user]
+	name = arhea
+	email = alex.rhea@gmail.com
