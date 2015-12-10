@@ -107,3 +107,10 @@ shopt -s cdspell;
 
 
 
+
+test -e ${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_integration.bash
+
+# path to the DCOS CLI binary
+if [[ "$PATH" != *"/Users/Alex/Code/dcos/bin"* ]];
+  then export PATH=$PATH:/Users/Alex/Code/dcos/bin;
+fi

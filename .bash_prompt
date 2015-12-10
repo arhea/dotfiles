@@ -160,6 +160,7 @@ set_prompts() {
     #   https://github.com/dholm/dotshell/blob/master/.local/lib/sh/profile.sh is quite nice.
     #   zprof is also hot.
 
+    echo "Welcome back Alex!"
 }
 
 

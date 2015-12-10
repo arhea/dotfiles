@@ -16,25 +16,25 @@ brew cask install spectacle
 brew cask install gyazo
 brew cask install flux
 brew cask install google-drive
-brew cask install lastpass
 brew cask install spotify
 brew cask install spotify-notifications
 brew cask install ipvanish-vpn
 brew cask install slack
+brew cask install 1password
 
 # dev
 brew cask install iterm2
 brew cask install sublime-text3
+brew cask install visual-studio-code
 brew cask install imagealpha
 brew cask install imageoptim
-brew cask install boot2docker
 brew cask install tower
 brew cask install virtualbox
 brew cask install cyberduck
+brew cask install dockertoolbox
 
 # fun
 brew cask install miro-video-converter
-brew cask install horndis               # usb tethering
 
 # browsers
 brew cask install google-chrome
