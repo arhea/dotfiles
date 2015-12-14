@@ -12,8 +12,6 @@ brew tap caskroom/versions
 
 # daily
 brew cask install alfred
-brew cask install spectacle
-brew cask install gyazo
 brew cask install flux
 brew cask install google-drive
 brew cask install spotify
@@ -48,9 +46,7 @@ brew cask install torbrowser
 # less often
 brew cask install disk-inventory-x
 brew cask install vlc
-brew cask install gpgtools
 brew cask install caffeine
-
 
 # Not on cask but I want regardless.
 
