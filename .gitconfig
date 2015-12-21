@@ -94,5 +94,5 @@
 	smudge = git-lfs smudge %f
 	required = true
 [user]
-	name = arhea
+	name = Alex Rhea
 	email = alex.rhea@gmail.com

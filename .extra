@@ -1,8 +1,6 @@
 alias hosts="subl /etc/hosts"
 alias sysconfig="subl ~/"
 
-alias vm="ssh vagrant@127.0.0.1 -p 2222"
-
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # PATH
@@ -23,5 +21,9 @@ PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH" # Homebrew PHP 5.6
 
 # Composer
 PATH=~/.composer/vendor/bin:$PATH
+
+# NVM
+export NVM_DIR=~/.nvm
+. $(brew --prefix nvm)/nvm.sh
 
 export PATH
