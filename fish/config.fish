@@ -1,38 +1,16 @@
-# set global colors
-set normal (set_color normal)
-set magenta (set_color magenta)
-set yellow (set_color yellow)
-set green (set_color green)
-set red (set_color red)
-set gray (set_color -o black)
-
 # set the default editor
 set -U EDITOR subl
 
 # setup the path
-set PATH $PATH $HOME/.rvm/bin
+set default_path /usr/bin /usr/sbin /bin /sbin
+set rvm_path $HOME/.rvm/bin
+set homebrew_path /usr/local/bin /usr/local/sbin (brew --prefix coreutils)/libexec/gnubin (brew --prefix homebrew/php/php56)/bin
+set composer_path ~/.composer/vendor/bin
 
-# setup nvm# set global colors
-set normal (set_color normal)
-set magenta (set_color magenta)
-set yellow (set_color yellow)
-set green (set_color green)
-set red (set_color red)
-set gray (set_color -o black)
-
-# set the default editor
-set -U EDITOR subl
-
-# setup the path
-set PATH $PATH $HOME/.rvm/bin
+set -g -x PATH $homebrew_path $rvm_path $composer_path $default_path
 
 # setup nvm
 test -s /Users/Alex/.nvm/nvm.fish; and source /Users/Alex/.nvm/nvm.fish
-
-# setup homebrew plugins
-set PATH $PATH (brew --prefix coreutils)/libexec/gnubin # Core Utils
-set PATH $PATH (brew --prefix homebrew/php/php56)/bin # PHP 5.6
-set PATH $PATH ~/.composer/vendor/bin # add composer path
 
 # Fish git prompt
 set __fish_git_prompt_showdirtystate 'yes'
