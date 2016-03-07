@@ -3,10 +3,7 @@
 # Install command-line tools using Homebrew
 
 # Make sure we’re using the latest Homebrew
-brew update
-
-# Upgrade any already-installed formulae
-brew upgrade
+brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup
 
 
 # GNU core utilities (those that come with OS X are outdated)
@@ -69,23 +66,6 @@ brew install ffmpeg --with-libvpx
 
 brew install terminal-notifier
 
-brew install android-platform-tools
-brew install pidcat   # colored logcat guy
-
-brew install zsh
-
-# Remove outdated versions from the cellar
-brew cleanup
-
-#!/bin/bash
-
-
-# to maintain cask ....
-#     brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup`
-
-
-# Install native apps
-
 brew install caskroom/cask/brew-cask
 brew tap caskroom/versions
 
@@ -126,9 +106,6 @@ brew cask install disk-inventory-x
 brew cask install vlc
 brew cask install caffeine
 
-# Not on cask but I want regardless.
-
-# 3Hub   https://itunes.apple.com/us/app/3hub/id427515976?mt=12
-# File Multi Tool 5
-# Phosphor
+# Remove outdated versions from the cellar
+brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup
 
