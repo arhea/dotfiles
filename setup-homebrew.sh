@@ -65,6 +65,11 @@ brew install ffmpeg --with-libvpx
 
 brew install terminal-notifier
 
+brew tap homebrew/homebrew-php
+
+brew install php56 \
+             php70
+
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 brew install caskroom/cask/brew-cask
