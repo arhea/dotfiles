@@ -1,5 +1,5 @@
 # set the default editor
-set -U EDITOR subl
+set -U EDITOR atom
 
 # setup the path
 set default_path /usr/bin /usr/sbin /bin /sbin
@@ -10,7 +10,7 @@ set composer_path ~/.composer/vendor/bin
 set -g -x PATH $homebrew_path $rvm_path $composer_path $default_path
 
 # setup nvm
-test -s ~/.nvm/nvm.fish; and source ~/.nvm/nvm.fish
+test -s ~nvm.fish; and source ~/.nvm/nvm.fish
 
 # Fish git prompt
 set __fish_git_prompt_showdirtystate 'yes'
@@ -44,8 +44,6 @@ end
 function fish_title
     echo "Welcome back Alex!"
 end
-
-test -s /Users/Alex/.nvm/nvm.fish; and source /Users/Alex/.nvm/nvm.fish
 
 # setup homebrew
 set HOMEBREW_CASK_OPTS "--appdir=/Applications"
