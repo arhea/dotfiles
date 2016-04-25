@@ -1,3 +1,5 @@
+#!/bin/bash
+
 nvm install v4.4
 nvm install v5.11
 
