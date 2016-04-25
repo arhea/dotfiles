@@ -5,7 +5,6 @@
 # Make sure we’re using the latest Homebrew
 brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup
 
-
 # GNU core utilities (those that come with OS X are outdated)
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew install coreutils
@@ -66,45 +65,52 @@ brew install ffmpeg --with-libvpx
 
 brew install terminal-notifier
 
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
 brew install caskroom/cask/brew-cask
 brew tap caskroom/versions
 
 # daily
-brew cask install alfred
-brew cask install flux
-brew cask install google-drive
-brew cask install spotify
-brew cask install spotify-notifications
-brew cask install ipvanish-vpn
-brew cask install slack
-brew cask install 1password
+brew cask install alfred \
+                  flux \
+                  google-drive \
+                  spotify \
+                  spotify-notifications \
+                  ipvanish-vpn \
+                  slack \
+                  1password \
+                  --appdir=/Applications \
+                  --force
 
 # dev
-brew cask install iterm2
-brew cask install sublime-text3
-brew cask install imagealpha
-brew cask install imageoptim
-brew cask install tower
-brew cask install virtualbox
-brew cask install cyberduck
-brew cask install dockertoolbox
-
-# fun
-brew cask install miro-video-converter
+brew cask install iterm2 \
+                  visual-studio-code \
+                  tower \
+                  imagealpha \
+                  imageoptim \
+                  virtualbox \
+                  cyberduck \
+                  miro-video-converter \
+                  --appdir=/Applications \
+                  --force
 
 # browsers
-brew cask install google-chrome
-brew cask install google-chrome-canary
-brew cask install firefox
-brew cask install firefox-nightly
-brew cask install webkit-nightly
-brew cask install chromium
-brew cask install torbrowser
+brew cask install google-chrome \
+                  google-chrome-canary \
+                  firefox \
+                  firefox-nightly \
+                  webkit-nightly \
+                  chromium \
+                  torbrowser \
+                  --appdir=/Applications \
+                  --force
 
 # less often
-brew cask install disk-inventory-x
-brew cask install vlc
-brew cask install caffeine
+brew cask install disk-inventory-x \
+                  vlc \
+                  caffeine \
+                  --appdir=/Applications \
+                  --force
 
 # Remove outdated versions from the cellar
 brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup

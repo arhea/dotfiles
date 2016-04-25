@@ -47,6 +47,9 @@ end
 
 test -s /Users/Alex/.nvm/nvm.fish; and source /Users/Alex/.nvm/nvm.fish
 
+# setup homebrew
+set HOMEBREW_CASK_OPTS "--appdir=/Applications"
+
 # setup homebrew plugins
 set PATH $PATH (brew --prefix coreutils)/libexec/gnubin # Core Utils
 set PATH $PATH (brew --prefix homebrew/php/php56)/bin # PHP 5.6
