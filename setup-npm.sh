@@ -1,7 +1,7 @@
-nvm install v4.2
-nvm install v5.3
+nvm install v4.4
+nvm install v5.11
 
-nvm alias default v5.3
+nvm alias default v5.11
 
 npm update -g
 
