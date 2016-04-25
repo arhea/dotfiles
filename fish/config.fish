@@ -10,7 +10,7 @@ set composer_path ~/.composer/vendor/bin
 set -g -x PATH $homebrew_path $rvm_path $composer_path $default_path
 
 # setup nvm
-test -s ~nvm.fish; and source ~/.nvm/nvm.fish
+test -s ~/.nvm-fish/nvm.fish; and source ~/.nvm-fish/nvm.fish
 
 # Fish git prompt
 set __fish_git_prompt_showdirtystate 'yes'
