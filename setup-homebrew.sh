@@ -85,6 +85,7 @@ brew cask install alfred \
 # dev
 brew cask install iterm2 \
                   visual-studio-code \
+                  atom \
                   tower \
                   imagealpha \
                   imageoptim \
@@ -114,4 +115,3 @@ brew cask install disk-inventory-x \
 
 # Remove outdated versions from the cellar
 brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup
-
