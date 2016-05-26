@@ -5,10 +5,9 @@ set -U EDITOR atom
 set default_path /usr/bin /usr/sbin /bin /sbin
 set rvm_path $HOME/.rvm/bin
 set homebrew_path /usr/local/bin /usr/local/sbin (brew --prefix coreutils)/libexec/gnubin (brew --prefix homebrew/php/php56)/bin
-set composer_path ~/.composer/vendor/bin
 set google_cloud_path ~/code/google-cloud-sdk/bin
 
-set -g -x PATH $homebrew_path $rvm_path $composer_path $google_cloud_path $default_path
+set -g -x PATH $homebrew_path $rvm_path $google_cloud_path $default_path
 
 # setup go
 set -x GOPATH ~/code/go
