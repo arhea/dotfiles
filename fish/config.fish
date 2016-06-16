@@ -12,8 +12,15 @@ set -g -x PATH $homebrew_path $rvm_path $google_cloud_path $default_path
 # setup go
 set -x GOPATH ~/code/go
 
+# setup ssh
+ssh-add ~/.ssh/id_rsa
+
 # setup nvm
-test -s ~/.nvm-fish/nvm.fish; and source ~/.nvm-fish/nvm.fish
+bass source ~/.nvm/nvm.sh --no-use ';' nvm use default
+
+function nvm
+   bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
+end
 
 # Fish git prompt
 set __fish_git_prompt_showdirtystate 'yes'
@@ -44,17 +51,8 @@ function fish_prompt
   set_color normal
 end
 
-function fish_title
-    echo "Welcome back Alex!"
-end
-
 # setup homebrew
 set HOMEBREW_CASK_OPTS "--appdir=/Applications"
-
-# setup homebrew plugins
-set PATH $PATH (brew --prefix coreutils)/libexec/gnubin # Core Utils
-set PATH $PATH (brew --prefix homebrew/php/php56)/bin # PHP 5.6
-set PATH $PATH ~/.composer/vendor/bin # add composer path
 
 # Fish git prompt
 set __fish_git_prompt_showdirtystate 'yes'
@@ -74,7 +72,10 @@ set __fish_git_prompt_char_upstream_ahead '+'
 set __fish_git_prompt_char_upstream_behind '-'
 
 function fish_greeting
-  echo "Welcome Back Alex!"
+    echo ' _______ ______ _______ _______ _______ '
+    echo '|   _   |   __ \   |   |    ___|   _   |'
+    echo '|       |      <       |    ___|       |'
+    echo '|___|___|___|__|___|___|_______|___|___|'
 end
 
 function fish_prompt

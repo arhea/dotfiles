@@ -12,9 +12,6 @@ echo $BASH_VERSION # should be 4.x not the old 3.2.X
 # install fish dependencies
 ./setup-fish.sh
 
-# install nvm fish
-curl https://raw.githubusercontent.com/Alex7Kom/nvm-fish/master/install.fish | fish
-
 # install npm packages
 ./setup-npm.sh
 

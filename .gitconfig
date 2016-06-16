@@ -33,6 +33,7 @@
 	attributesfile = ~/.gitattributes
 	# insanely beautiful diffs
 	pager = diff-highlight | diff-so-fancy | less -r
+	editor = atom --wait
 [color "branch"]
 	current = yellow reverse
 	local = yellow
