@@ -10,7 +10,7 @@ set google_cloud_path ~/code/google-cloud-sdk/bin
 set -g -x PATH $homebrew_path $rvm_path $google_cloud_path $default_path
 
 # setup go
-set -x GOPATH ~/code/go
+set -x GOPATH $HOME/code/go
 
 # setup ssh
 ssh-add ~/.ssh/id_rsa
@@ -21,6 +21,9 @@ bass source ~/.nvm/nvm.sh --no-use ';' nvm use default
 function nvm
    bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
 end
+
+# setup aliases
+alias brewupdate "brew update ; brew upgrade ; brew cleanup ; brew cask cleanup; brew doctor; brew prune"
 
 # Fish git prompt
 set __fish_git_prompt_showdirtystate 'yes'
