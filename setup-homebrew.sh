@@ -37,33 +37,28 @@ brew install homebrew/dupes/screen
 
 
 # run this script when this file changes guy.
-brew install entr
-
-# github util. imho better than hub
-brew install gh
-
+brew install entr gh
 
 # mtr - ping & traceroute. best.
 brew install mtr
 
-    # allow mtr to run without sudo
-    mtrlocation=$(brew info mtr | grep Cellar | sed -e 's/ (.*//') #  e.g. `/Users/paulirish/.homebrew/Cellar/mtr/0.86`
-    sudo chmod 4755 $mtrlocation/sbin/mtr
-    sudo chown root $mtrlocation/sbin/mtr
+# allow mtr to run without sudo
+mtrlocation=$(brew info mtr | grep Cellar | sed -e 's/ (.*//') #  e.g. `/Users/paulirish/.homebrew/Cellar/mtr/0.86`
+sudo chmod 4755 $mtrlocation/sbin/mtr
+sudo chown root $mtrlocation/sbin/mtr
 
 
 # Install other useful binaries
-brew install ack
-brew install git
-brew install imagemagick --with-webp
-brew install nvm # This installs `npm` too using the recommended installation method
-brew install pv
-brew install rename
-brew install tree
-brew install zopfli
-brew install ffmpeg --with-libvpx
-
-brew install terminal-notifier
+brew install ack \
+            git \
+            imagemagick --with-webp \
+            nvm  \ # This installs `npm` too using the recommended installation method
+            pv \
+            rename \
+            tree \
+            zopfli \
+            ffmpeg --with-libvpx \
+            terminal-notifier
 
 brew tap homebrew/homebrew-php
 
