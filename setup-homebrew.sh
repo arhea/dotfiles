@@ -74,7 +74,8 @@ brew cask install \
     1password \
     google-chrome \
     ipvanish-vpn \
-    sublime-text
+    sublime-text \
+    keybase \
     alfred \
     google-chrome-canary \
     iterm2 \
