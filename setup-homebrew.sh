@@ -75,48 +75,43 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 brew install caskroom/cask/brew-cask
 brew tap caskroom/versions
 
-# daily
-brew cask install alfred \
-                  flux \
-                  google-drive \
-                  spotify \
-                  spotify-notifications \
-                  ipvanish-vpn \
-                  slack \
-                  1password \
-                  --appdir=/Applications \
-                  --force
-
-# dev
-brew cask install iterm2 \
-                  visual-studio-code \
-                  atom \
-                  tower \
-                  imagealpha \
-                  imageoptim \
-                  virtualbox \
-                  cyberduck \
-                  miro-video-converter \
-                  --appdir=/Applications \
-                  --force
-
-# browsers
-brew cask install google-chrome \
-                  google-chrome-canary \
-                  firefox \
-                  firefox-nightly \
-                  webkit-nightly \
-                  chromium \
-                  torbrowser \
-                  --appdir=/Applications \
-                  --force
-
-# less often
-brew cask install disk-inventory-x \
-                  vlc \
-                  caffeine \
-                  --appdir=/Applications \
-                  --force
+brew cask install \
+    1password \
+    google-chrome \
+    ipvanish-vpn \
+    sublime-text
+    alfred \
+    google-chrome-canary \
+    iterm2 \
+    torbrowser \
+    atom \
+    google-drive \
+    java \
+    tower \
+    caffeine \
+    gpgtools \
+    java6 \
+    transmission \
+    chromium \
+    gyazo \
+    java7 \
+    virtualbox
+    cyberduck \
+    handbrake \
+    keybase \
+    visual-studio-code \
+    disk-inventory-x \
+    horndis \
+    slack \
+    vlc \
+    firefox \
+    imagealpha \
+    spotify \
+    webkit-nightly \
+    flux \
+    imageoptim \
+    spotify-notifications \
+    xquartz
 
 # Remove outdated versions from the cellar
 brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup
