@@ -4,7 +4,7 @@ set -U EDITOR atom
 # setup the path
 set default_path /usr/bin /usr/sbin /bin /sbin
 set rvm_path $HOME/.rvm/bin
-set homebrew_path /usr/local/bin /usr/local/sbin (brew --prefix coreutils)/libexec/gnubin (brew --prefix homebrew/php/php56)/bin
+set homebrew_path /usr/local/bin /usr/local/sbin (brew --prefix homebrew/php/php56)/bin
 set google_cloud_path ~/code/google-cloud-sdk/bin
 set docker_path ~/Library/Group\ Containers/group.com.docker/bin
 
