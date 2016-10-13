@@ -23,8 +23,18 @@ function nvm
    bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
 end
 
-# setup aliases
-alias brewupdate "brew update ; brew upgrade ; brew cleanup ; brew cask cleanup; brew doctor; brew prune"
+# homebrew aliases
+alias bu "brew update ; brew upgrade ; brew cleanup ; brew cask cleanup; brew doctor; brew prune"
+
+# docker aliases
+alias dstop "docker stop (docker ps -aq)"
+alias drm "docker rm (docker ps -aq)"
+alias drmi "docker rmi (docker iamges -q)"
+alias dclean "docker stop (docker ps -aq); docker rm (docker ps -aq); docker rmi (docker iamges -q)"
+
+# docker machine aliases
+alias dclusterup "docker-machine create --driver virtualbox node-manager; docker-machine create --driver virtualbox node-worker-1; docker-machine create --driver virtualbox node-worker-2"
+alias dclusterdown "docker-machine stop node-manager node-worker-1 node-worker-2 ; docker-machine rm node-manager node-worker-1 node-worker-2"
 
 # Fish git prompt
 set __fish_git_prompt_showdirtystate 'yes'
