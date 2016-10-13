@@ -29,8 +29,8 @@ alias bu "brew update ; brew upgrade ; brew cleanup ; brew cask cleanup; brew do
 # docker aliases
 alias dstop "docker stop (docker ps -aq)"
 alias drm "docker rm (docker ps -aq)"
-alias drmi "docker rmi (docker iamges -q)"
-alias dclean "docker stop (docker ps -aq); docker rm (docker ps -aq); docker rmi (docker iamges -q)"
+alias drmi "docker rmi (docker images -q)"
+alias dclean "docker stop (docker ps -aq); docker rm (docker ps -aq); docker rmi (docker images -q)"
 
 # docker machine aliases
 alias dclusterup "docker-machine create --driver virtualbox node-manager; docker-machine create --driver virtualbox node-worker-1; docker-machine create --driver virtualbox node-worker-2"
