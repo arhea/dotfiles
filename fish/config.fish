@@ -1,5 +1,5 @@
 # set the default editor
-set -U EDITOR atom
+set -U EDITOR subl
 
 # setup the path
 set default_path /usr/bin /usr/sbin /bin /sbin
