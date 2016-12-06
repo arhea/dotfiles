@@ -19,8 +19,10 @@ brew install gnu-sed --default-names
 # Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before running `chsh`.
 brew install bash
 brew install fish
-# regular bash-completion package is held back to an older release, so we get latest from versions.
-#   github.com/Homebrew/homebrew/blob/master/Library/Formula/bash-completion.rb#L3-L4
+
+brew tap fisherman/tap
+brew install fisherman
+
 brew tap homebrew/versions
 brew install homebrew/versions/bash-completion2
 

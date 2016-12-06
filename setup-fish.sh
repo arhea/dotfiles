@@ -2,8 +2,8 @@
 
 # symlink fish config
 mkdir -p ~/.config/fish/functions
-ln -s $(pwd)/fish/config.fish ~/.config/fish/config.fish
-ln -s $(pwd)/fish/functions/fisher.fish ~/.config/fish/functions/fisher.fish
+ls -s $(pwd)/fish/completions "~/.config/fish/completions"
+ls -s $(pwd)/fish/config.fish "~/.config/fish/config.fish"
 
 # make fish my default shell
 echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
