@@ -77,33 +77,23 @@ brew cask install \
     sublime-text \
     keybase \
     alfred \
-    google-chrome-canary \
     iterm2 \
-    torbrowser \
     atom \
-    google-drive \
-    java \
     tower \
     caffeine \
     gpgtools \
-    java6 \
     transmission \
-    chromium \
     gyazo \
-    java7 \
     virtualbox
     cyberduck \
     handbrake \
     keybase \
-    visual-studio-code \
     disk-inventory-x \
     horndis \
     slack \
     vlc \
-    firefox \
     imagealpha \
     spotify \
-    webkit-nightly \
     flux \
     imageoptim \
     spotify-notifications \
