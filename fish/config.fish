@@ -4,7 +4,7 @@ set -U EDITOR subl
 # setup the path
 set default_path /usr/bin /usr/sbin /bin /sbin
 set rvm_path $HOME/.rvm/bin
-set homebrew_path /usr/local/bin /usr/local/sbin (brew --prefix homebrew/php/php56)/bin
+set homebrew_path /usr/local/bin /usr/local/sbin
 set google_cloud_path ~/code/google-cloud-sdk/bin
 set docker_path /Applications/Docker.app/Contents/Resources/bin
 
