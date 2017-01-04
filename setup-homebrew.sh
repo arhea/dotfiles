@@ -24,10 +24,6 @@ brew tap fisherman/tap
 brew install fisherman
 
 brew tap homebrew/versions
-brew install homebrew/versions/bash-completion2
-
-# generic colouriser  http://kassiopeia.juls.savba.sk/~garabik/software/grc/
-brew install grc
 
 # Install wget with IRI support
 brew install wget --enable-iri
@@ -62,11 +58,6 @@ brew install ack \
             ffmpeg --with-libvpx \
             terminal-notifier
 
-brew tap homebrew/homebrew-php
-
-brew install php56 \
-             php70
-
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 brew install caskroom/cask/brew-cask
@@ -80,26 +71,18 @@ brew cask install \
     keybase \
     alfred \
     iterm2 \
-    atom \
     tower \
     caffeine \
-    gpgtools \
     transmission \
-    gyazo \
     virtualbox
     cyberduck \
     handbrake \
     keybase \
-    disk-inventory-x \
-    horndis \
     slack \
     vlc \
-    imagealpha \
     spotify \
     flux \
-    imageoptim \
-    spotify-notifications \
-    xquartz
+    spotify-notifications
 
 # Remove outdated versions from the cellar
 brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup
