@@ -30,7 +30,7 @@ alias bu "brew update ; brew upgrade ; brew cleanup ; brew cask cleanup; brew do
 alias dstop "docker stop (docker ps -aq)"
 alias drm "docker rm (docker ps -aq)"
 alias drmi "docker rmi (docker images -q)"
-alias dclean "docker stop (docker ps -aq); docker rm (docker ps -aq); docker rmi (docker images -q)"
+alias dclean "docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v /etc:/etc spotify/docker-gc"
 
 # docker machine aliases
 alias dclusterup "docker-machine create --driver virtualbox node-manager; docker-machine create --driver virtualbox node-worker-1; docker-machine create --driver virtualbox node-worker-2"
