@@ -16,12 +16,12 @@ echo $BASH_VERSION # should be 4.x not the old 3.2.X
 ./setup-npm.sh
 
 # symlink git configs to home directory
-ln -s $(pwd)/.gitattributes ~/.gitattributes
-ln -s $(pwd)/.gitconfig ~/.gitconfig
-ln -s $(pwd)/.gitignore ~/.gitignore
-ln -s $(pwd)/.gitmodules ~/.gitmodules
-ln -s $(pwd)/.editorconfig ~/.editorconfig
-ln -s $(pwd)/prefs/preferences.sublime-settings "~/Library/Application Support/Sublime Text 3/Packages/Preferences.sublime-settings"
+ln -sf $(pwd)/.gitattributes ~/.gitattributes
+ln -sf $(pwd)/.gitconfig ~/.gitconfig
+ln -sf $(pwd)/.gitignore ~/.gitignore
+ln -sf $(pwd)/.gitmodules ~/.gitmodules
+ln -sf $(pwd)/.editorconfig ~/.editorconfig
+ln -sf $(pwd)/prefs/preferences.sublime-settings "~/Library/Application Support/Sublime Text 3/Packages/Preferences.sublime-settings"
 
 # configure osx settings to my liking
 ./setup-osx.sh

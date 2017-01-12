@@ -1,10 +1,10 @@
 #!/bin/bash
 
-nvm install v4
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
+
 nvm install v6
 
 nvm alias default v6
 
-npm update -g
-
-npm install -g gulp bower nodemon
+npm update -g npm
+npm install -g nodemon

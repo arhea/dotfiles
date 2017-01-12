@@ -2,7 +2,6 @@
   "bold_folder_labels": true,
   "caret_extra_width": 2,
   "caret_style": "phase",
-  "color_scheme": "Packages/User/Seti_monokai (SL).tmTheme",
   "file_exclude_patterns":
   [
     ".DS_Store",
@@ -30,8 +29,8 @@
   "line_padding_top": 2,
   "overlay_scroll_bars": "enabled",
   "soda_classic_tabs": true,
-  "theme": "Soda Dark 3.sublime-theme",
   "translate_tabs_to_spaces": true,
   "trim_trailing_white_space_on_save": true,
+  "theme": "Soda Dark 3.sublime-theme",
   "word_wrap": true
 }
