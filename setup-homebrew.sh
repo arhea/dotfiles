@@ -28,15 +28,6 @@ brew tap homebrew/versions
 # Install wget with IRI support
 brew install wget --enable-iri
 
-# Install more recent versions of some OS X tools
-brew install vim --override-system-vi
-brew install homebrew/dupes/grep
-brew install homebrew/dupes/screen
-
-
-# run this script when this file changes guy.
-brew install entr gh
-
 # mtr - ping & traceroute. best.
 brew install mtr
 
@@ -45,16 +36,10 @@ mtrlocation=$(brew info mtr | grep Cellar | sed -e 's/ (.*//') #  e.g. `/Users/p
 sudo chmod 4755 $mtrlocation/sbin/mtr
 sudo chown root $mtrlocation/sbin/mtr
 
-
 # Install other useful binaries
 brew install ack \
             git \
-            imagemagick --with-webp \
             nvm  \ # This installs `npm` too using the recommended installation method
-            pv \
-            rename \
-            tree \
-            zopfli \
             ffmpeg --with-libvpx \
             terminal-notifier
 
