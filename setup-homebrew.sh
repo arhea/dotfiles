@@ -2,8 +2,6 @@
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-# Install command-line tools using Homebrew
-
 # Make sure we’re using the latest Homebrew
 brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup
 
@@ -25,7 +23,8 @@ brew install coreutils \
             wget --enable-iri \
             caskroom/cask/brew-cask \
             terraform \
-            packer
+            packer \
+            go
 
 
 # allow mtr to run without sudo
@@ -35,7 +34,7 @@ sudo chown root $mtrlocation/sbin/mtr
 
 brew cask install \
     ipvanish-vpn \
-    sublime-text \
+    visual-studio-code \
     keybase \
     alfred \
     iterm2 \

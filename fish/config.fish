@@ -1,5 +1,5 @@
 # set the default editor
-set -U EDITOR subl
+set -U EDITOR code
 
 # setup the path
 set default_path /usr/bin /usr/sbin /bin /sbin
@@ -8,9 +8,8 @@ set docker_path /Applications/Docker.app/Contents/Resources/bin
 
 set coreutils_path (brew --prefix coreutils)/libexec/gnubin
 set findutils_path (brew --prefix findutils)/libexec/gnubin
-set moreutils_path (brew --prefix moreutils)/libexec/gnubin
 
-set -g -x PATH $homebrew_path $coreutils_path $findutils_path $moreutils_path $default_path $docker_path
+set -g -x PATH $homebrew_path $coreutils_path $findutils_path $default_path $docker_path
 
 # setup go
 set -x GOPATH $HOME/code/go
