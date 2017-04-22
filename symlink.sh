@@ -1,11 +1,29 @@
 #!/bin/bash
 
-# symlink git configs to home directory
-ln -sf $(pwd)/.gitattributes ~/.gitattributes
-ln -sf $(pwd)/.gitconfig ~/.gitconfig
-ln -sf $(pwd)/.gitignore ~/.gitignore
-ln -sf $(pwd)/.gitmodules ~/.gitmodules
-ln -sf $(pwd)/.editorconfig ~/.editorconfig
+# Fish Shell
+mkdir -p "$HOME/.config/fish/completions"
+mkdir -p "$HOME/.config/fish/functions"
+
+ln -sf $(pwd)/fish/completions/docker.fish "$HOME/.config/fish/completions/docker.fish"
+ln -sf $(pwd)/fish/completions/docker-compose.fish "$HOME/.config/fish/completions/docker-compose.fish"
+ln -sf $(pwd)/fish/completions/fisher.fish "$HOME/.config/fish/completions/fisher.fish"
+ln -sf $(pwd)/fish/functions/tools.fish "$HOME/.config/fish/functions/tools.fish"
+ln -sf $(pwd)/fish/config.fish "$HOME/.config/fish/config.fish"
+
+# Git
+ln -sf $(pwd)/.gitattributes $HOME/.gitattributes
+ln -sf $(pwd)/.gitconfig $HOME/.gitconfig
+ln -sf $(pwd)/.gitignore $HOME/.gitignore
+ln -sf $(pwd)/.gitmodules $HOME/.gitmodules
+ln -sf $(pwd)/.editorconfig $HOME/.editorconfig
+
+# Visual Studio Code
 ln -sf $(pwd)/prefs/visual-studio-code/settings.json "$HOME/Library/Application Support/Code/User/settings.json"
-ln -sf $(pwd)/prefs/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
-ln -sf $(pwd)/prefs/com.runningwithcrayons.Alfred-Preferences-3.plist ~/Library/Preferences/com.runningwithcrayons.Alfred-Preferences-3.plist
+
+# iTerm2
+ln -sf $(pwd)/prefs/com.googlecode.iterm2.plist "$HOME/Library/Preferences/com.googlecode.iterm2.plist"
+
+# GPG Symlinks
+mkdir -p $HOME/.gnupg
+ln -sf $(pwd)/.gnupg/gpg.conf $HOME/.gnupg/gpg.conf
+ln -sf $(pwd)/.gnupg/gpg-agent.conf $HOME/.gnupg/gpg-agent.conf
