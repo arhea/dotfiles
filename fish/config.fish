@@ -9,10 +9,10 @@ set docker_path /Applications/Docker.app/Contents/Resources/bin
 set -g -x PATH $homebrew_path $default_path $docker_path
 
 # setup ssh
-ssh-add ~/.ssh/id_rsa
+bash -c "ssh-add ~/.ssh/id_rsa &>/dev/null"
 
 # setup homebrew
-set HOMEBREW_CASK_OPTS "--appdir=/Applications"
+set -x HOMEBREW_CASK_OPTS "--appdir=/Applications"
 
 # Pipe my public key to my clipboard.
 alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
@@ -24,16 +24,6 @@ source ~/.config/fish/completions/docker.fish
 source ~/.config/fish/completions/docker-compose.fish
 source ~/.config/fish/completions/fisher.fish
 source ~/.config/fish/functions/tools.fish
-
-# utilities
-function bu
-  brew update
-  brew upgrade
-  brew cleanup
-  brew cask cleanup
-  brew doctor
-  brew prune
-end
 
 # Fish git prompt
 set __fish_git_prompt_showdirtystate 'yes'
@@ -51,13 +41,6 @@ set __fish_git_prompt_char_untrackedfiles '💥'
 set __fish_git_prompt_char_stashstate '🚪'
 set __fish_git_prompt_char_upstream_ahead '🛩'
 set __fish_git_prompt_char_upstream_behind '⚓'
-
-function fish_greeting
-    echo ' _______ ______ _______ _______ _______ '
-    echo '|   _   |   __ \   |   |    ___|   _   |'
-    echo '|       |      <       |    ___|       |'
-    echo '|___|___|___|__|___|___|_______|___|___|'
-end
 
 function fish_prompt
   set last_status $status
