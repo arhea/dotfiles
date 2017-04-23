@@ -1,13 +1,8 @@
 #!/bin/bash
 
 # Fish Shell
-mkdir -p "$HOME/.config/fish/completions"
-mkdir -p "$HOME/.config/fish/functions"
-
-ln -sf $(pwd)/fish/completions/docker.fish "$HOME/.config/fish/completions/docker.fish"
-ln -sf $(pwd)/fish/completions/docker-compose.fish "$HOME/.config/fish/completions/docker-compose.fish"
-ln -sf $(pwd)/fish/completions/fisher.fish "$HOME/.config/fish/completions/fisher.fish"
-ln -sf $(pwd)/fish/functions/tools.fish "$HOME/.config/fish/functions/tools.fish"
+ln -sf $(pwd)/fish/completions "$HOME/.config/fish/completions"
+ln -sf $(pwd)/fish/functions "$HOME/.config/fish/functions"
 ln -sf $(pwd)/fish/config.fish "$HOME/.config/fish/config.fish"
 
 # Git

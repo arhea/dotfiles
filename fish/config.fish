@@ -8,17 +8,14 @@ set docker_path /Applications/Docker.app/Contents/Resources/bin
 
 set -g -x PATH $homebrew_path $default_path $docker_path
 
+# setup fish function path
+set fish_function_path $HOME/.config/fish/functions $fish_function_path
+
 # setup ssh
-bash -c "ssh-add ~/.ssh/id_rsa &>/dev/null"
+bash -c "ssh-add $HOME/.ssh/id_rsa &>/dev/null"
 
 # setup homebrew
 set -x HOMEBREW_CASK_OPTS "--appdir=/Applications"
-
-# Pipe my public key to my clipboard.
-alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
-
-# Pipe my private key to my clipboard.
-alias prikey="cat ~/.ssh/id_rsa | pbcopy | echo '=> Private key copied to pasteboard.'"
 
 source ~/.config/fish/completions/docker.fish
 source ~/.config/fish/completions/docker-compose.fish

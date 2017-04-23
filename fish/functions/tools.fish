@@ -7,7 +7,7 @@ set ruby_image "ruby:2-alpine"
 set php_image "php:7-alpine"
 set htop_image "jess/htop:latest"
 
-function brew-update --description "Run Homebrew Update"
+function brew_update --description "Run Homebrew Update"
   brew update
   brew upgrade
   brew cleanup
@@ -16,7 +16,7 @@ function brew-update --description "Run Homebrew Update"
   brew prune
 end
 
-function tools-update --description "Update local containers that are used to run tools such as Node.js, PHP, Ruby, Terraform, and Packer"
+function tools_update --description "Update local containers that are used to run tools such as Node.js, PHP, Ruby, Terraform, and Packer"
   echo "=> Pulling Spotify Docker Garbage Collection"
   docker pull $docker_gc_image
 
