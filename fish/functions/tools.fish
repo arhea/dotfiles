@@ -17,40 +17,57 @@ function brew_update --description "Run Homebrew Update"
 end
 
 function tools_update --description "Update local containers that are used to run tools such as Node.js, PHP, Ruby, Terraform, and Packer"
+
+  set_color green
   echo "=> Pulling Spotify Docker Garbage Collection"
+  set_color normal
   docker pull $docker_gc_image
 
+  set_color green
   echo "=> Pulling Hashicorp Terraform"
+  set_color normal
   docker pull $terraform_image
 
+  set_color green
   echo "=> Pulling Hashicorp Packer"
+  set_color normal
   docker pull $packer_image
 
+  set_color green
   echo "=> Pulling Node.js"
+  set_color normal
   docker pull $node_image
 
+  set_color green
   echo "=> Pulling Ruby"
+  set_color normal
   docker pull $ruby_image
 
+  set_color green
   echo "=> Pulling PHP"
+  set_color normal
   docker pull $php_image
 
+  set_color green
   echo "=> Pulling HTOP"
+  set_color normal
   docker pull $htop_image
 end
 
-function docker-gc
+function docker_gc
   docker run -it --rm --name=docker-gc \
-    -v /var/run/docker.sock:/var/run/docker.sock
-    -v /etc:/etc
+    -v /etc/localtime:/etc/localtime:ro \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -v /etc:/etc \
     $docker_gc_image
 
-  tools-update
+  tools_update
 end
 
 function terraform
   docker run -it --rm \
     -w /usr/src/app \
+    -v /etc/localtime:/etc/localtime:ro \
     -v $HOME/.aws:/root/.aws \
     -v $PWD:/usr/src/app \
     $terraform_image $argv
@@ -59,6 +76,7 @@ end
 function packer
   docker run -it --rm \
     -w /usr/src/app \
+    -v /etc/localtime:/etc/localtime:ro \
     -v "$HOME"/.aws:/root/.aws \
     -v "$PWD":/usr/src/app \
     $packer_image $argv
@@ -67,6 +85,7 @@ end
 function node
   docker run -it --rm \
     -w /usr/src/app \
+    -v /etc/localtime:/etc/localtime:ro \
     -v "$HOME"/.aws:/root/.aws \
     -v "$PWD":/usr/src/app \
     -p "3000:3000" \
@@ -78,6 +97,7 @@ end
 function npm
   docker run -it --rm \
     -w /usr/src/app \
+    -v /etc/localtime:/etc/localtime:ro \
     -v "$HOME"/.aws:/root/.aws \
     -v "$PWD":/usr/src/app \
     $node_image \
@@ -87,6 +107,7 @@ end
 function ruby
   docker run -it --rm \
     -w /usr/src/app \
+    -v /etc/localtime:/etc/localtime:ro \
     -v "$HOME"/.aws:/root/.aws \
     -v "$PWD":/usr/src/app \
     $ruby_image \
@@ -96,6 +117,7 @@ end
 function php
   docker run -it --rm \
     -w /usr/src/app \
+    -v /etc/localtime:/etc/localtime:ro \
     -v "$HOME"/.aws:/root/.aws \
     -v "$PWD":/usr/src/app \
     $php_image \

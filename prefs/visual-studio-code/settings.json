@@ -1,5 +1,11 @@
 {
   "editor.fontSize": 13,
   "editor.fontFamily": "Roboto Mono, Monaco, 'Courier New', monospace",
-  "editor.wordWrap": true
+  "editor.wordWrap": true,
+  "[cpp]": {
+    "editor.quickSuggestions": false
+  },
+  "[c]": {
+    "editor.quickSuggestions": false
+  }
 }
