@@ -5,6 +5,7 @@ set packer_image "hashicorp/packer:light"
 set node_image "node:6-alpine"
 set ruby_image "ruby:2-alpine"
 set php_image "php:7-alpine"
+set go_image "golang:1.8"
 set htop_image "jess/htop:latest"
 
 function brew_update --description "Run Homebrew Update"
@@ -49,6 +50,11 @@ function tools_update --description "Update local containers that are used to ru
   docker pull $php_image
 
   set_color green
+  echo "=> Pulling Go Lang"
+  set_color normal
+  docker pull $go_image
+
+  set_color green
   echo "=> Pulling HTOP"
   set_color normal
   docker pull $htop_image
@@ -68,7 +74,7 @@ function terraform
   docker run -it --rm \
     -w /usr/src/app \
     -v /etc/localtime:/etc/localtime:ro \
-    -v $HOME/.aws:/root/.aws \
+    -v "$HOME/.aws":/root/.aws \
     -v $PWD:/usr/src/app \
     $terraform_image $argv
 end
@@ -86,7 +92,7 @@ function node
   docker run -it --rm \
     -w /usr/src/app \
     -v /etc/localtime:/etc/localtime:ro \
-    -v "$HOME"/.aws:/root/.aws \
+    -v "$HOME/.aws":/root/.aws \
     -v "$PWD":/usr/src/app \
     -p "3000:3000" \
     -p "5858:5858" \
@@ -98,7 +104,7 @@ function npm
   docker run -it --rm \
     -w /usr/src/app \
     -v /etc/localtime:/etc/localtime:ro \
-    -v "$HOME"/.aws:/root/.aws \
+    -v "$HOME/.aws":/root/.aws \
     -v "$PWD":/usr/src/app \
     $node_image \
     /usr/local/bin/npm $argv
@@ -108,7 +114,7 @@ function ruby
   docker run -it --rm \
     -w /usr/src/app \
     -v /etc/localtime:/etc/localtime:ro \
-    -v "$HOME"/.aws:/root/.aws \
+    -v "$HOME/.aws":/root/.aws \
     -v "$PWD":/usr/src/app \
     $ruby_image \
     ruby $argv
@@ -118,10 +124,22 @@ function php
   docker run -it --rm \
     -w /usr/src/app \
     -v /etc/localtime:/etc/localtime:ro \
-    -v "$HOME"/.aws:/root/.aws \
+    -v "$HOME/.aws":/root/.aws \
     -v "$PWD":/usr/src/app \
     $php_image \
     $argv
+end
+
+function go
+  docker run -it --rm \
+    -w /usr/src/app \
+    -v /etc/localtime:/etc/localtime:ro \
+    -v "$HOME/.aws":/root/.aws \
+    -v "$HOME/code/.go":/usr/src \
+    -v "$PWD":/usr/src/app \
+    -e "GOPATH=/usr/src" \
+    $go_image \
+    go $argv
 end
 
 function htop

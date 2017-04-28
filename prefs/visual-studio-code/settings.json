@@ -7,5 +7,6 @@
   },
   "[c]": {
     "editor.quickSuggestions": false
-  }
+  },
+  "window.zoomLevel": 0
 }
