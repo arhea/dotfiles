@@ -13,6 +13,9 @@ brew install gnu-sed --default-names \
             fish \
             fisherman \
             git \
+            node \
+            ruby \
+            go \
             ffmpeg --with-libvpx \
             terminal-notifier \
             wget --enable-iri
