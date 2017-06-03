@@ -1,0 +1,1 @@
+/Users/alex/.config/fisherman/nvm/yarn.fish

@@ -2,11 +2,7 @@
   "editor.fontSize": 13,
   "editor.fontFamily": "Roboto Mono, Monaco, 'Courier New', monospace",
   "editor.wordWrap": true,
-  "[cpp]": {
-    "editor.quickSuggestions": false
-  },
-  "[c]": {
-    "editor.quickSuggestions": false
-  },
-  "window.zoomLevel": 0
+  "window.zoomLevel": 0,
+  "extensions.autoUpdate": true,
+  "terraform.formatOnSave": true
 }

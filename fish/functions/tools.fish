@@ -1,11 +1,5 @@
 
 set docker_gc_image "spotify/docker-gc:latest"
-set terraform_image "hashicorp/terraform:light"
-set packer_image "hashicorp/packer:light"
-set node_image "node:6-alpine"
-set ruby_image "ruby:2-alpine"
-set php_image "php:7-alpine"
-set go_image "golang:1.8"
 set htop_image "jess/htop:latest"
 
 function brew_update --description "Run Homebrew Update"
@@ -23,36 +17,6 @@ function tools_update --description "Update local containers that are used to ru
   echo "=> Pulling Spotify Docker Garbage Collection"
   set_color normal
   docker pull $docker_gc_image
-
-  set_color green
-  echo "=> Pulling Hashicorp Terraform"
-  set_color normal
-  docker pull $terraform_image
-
-  set_color green
-  echo "=> Pulling Hashicorp Packer"
-  set_color normal
-  docker pull $packer_image
-
-  set_color green
-  echo "=> Pulling Node.js"
-  set_color normal
-  docker pull $node_image
-
-  set_color green
-  echo "=> Pulling Ruby"
-  set_color normal
-  docker pull $ruby_image
-
-  set_color green
-  echo "=> Pulling PHP"
-  set_color normal
-  docker pull $php_image
-
-  set_color green
-  echo "=> Pulling Go Lang"
-  set_color normal
-  docker pull $go_image
 
   set_color green
   echo "=> Pulling HTOP"

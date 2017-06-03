@@ -7,8 +7,11 @@ brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup
 
 brew tap fisherman/tap
 brew tap homebrew/versions
+brew tap homebrew/php
 
 brew install gnu-sed --default-names \
+            gnutls \
+            curl \
             bash \
             fish \
             fisherman \
@@ -16,6 +19,21 @@ brew install gnu-sed --default-names \
             node \
             ruby \
             go \
+            awscli \
+            amazon-ecs-cli \
+            ansible \
+            terraform \
+            packer \
+            gnugpg \
+            kubernetes-cli \
+            kubernetes-helm \
+            openssl \
+            php56 \
+            php56-grpc \
+            php56-mcrypt \
+            php56-mongo \
+            composer \
+            nvm \
             ffmpeg --with-libvpx \
             terminal-notifier \
             wget --enable-iri

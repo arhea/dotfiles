@@ -13,6 +13,9 @@ ln -sf $(pwd)/.gitignore $HOME/.gitignore
 ln -sf $(pwd)/.gitmodules $HOME/.gitmodules
 ln -sf $(pwd)/.editorconfig $HOME/.editorconfig
 
+# NVM
+ln -sf $(pwd)/.nvmrc $HOME/.nvmrc
+
 # Visual Studio Code
 ln -sf $(pwd)/prefs/visual-studio-code/settings.json "$HOME/Library/Application Support/Code/User/settings.json"
 

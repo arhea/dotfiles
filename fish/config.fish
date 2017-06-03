@@ -4,15 +4,20 @@ set -U EDITOR code
 # setup the path
 set default_path /usr/bin /usr/sbin /bin /sbin
 set homebrew_path /usr/local/bin /usr/local/sbin
+set curl_path /usr/local/opt/curl/bin
 set docker_path /Applications/Docker.app/Contents/Resources/bin
 
-set -g -x PATH $homebrew_path $default_path $docker_path
+set -g -x PATH $homebrew_path $curl_path $default_path $docker_path
 
 # setup fish function path
 set fish_function_path $HOME/.config/fish/functions $fish_function_path
 
 # setup ssh
 bash -c "ssh-add $HOME/.ssh/id_rsa &>/dev/null"
+
+# setup nvm
+set -gx NVM_DIR "$HOME/.nvm"
+set -gx NVM_HOME (brew --prefix nvm)
 
 # setup homebrew
 set -x HOMEBREW_CASK_OPTS "--appdir=/Applications"
