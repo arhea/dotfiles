@@ -1,13 +1,20 @@
 # set the default editor
 set -U EDITOR code
 
+# theme options
+set -g theme_color_scheme dark
+set -g theme_display_date no
+set -g theme_display_cmd_duration no
+set -g theme_powerline_fonts no
+set -g theme_nerd_fonts no
+
 # setup the path
 set default_path /usr/bin /usr/sbin /bin /sbin
+set n_path $HOME/n/bin
 set homebrew_path /usr/local/bin /usr/local/sbin
 set curl_path /usr/local/opt/curl/bin
 set docker_path /Applications/Docker.app/Contents/Resources/bin
-
-set -g -x PATH $homebrew_path $curl_path $default_path $docker_path
+set -gx PATH $homebrew_path $curl_path $n_path $docker_path $default_path
 
 # setup fish function path
 set fish_function_path $HOME/.config/fish/functions $fish_function_path
@@ -15,43 +22,11 @@ set fish_function_path $HOME/.config/fish/functions $fish_function_path
 # setup ssh
 bash -c "ssh-add $HOME/.ssh/id_rsa &>/dev/null"
 
-# setup nvm
-set -gx NVM_DIR "$HOME/.nvm"
-set -gx NVM_HOME (brew --prefix nvm)
-
 # setup homebrew
 set -x HOMEBREW_CASK_OPTS "--appdir=/Applications"
 
-source ~/.config/fish/completions/docker.fish
-source ~/.config/fish/completions/docker-compose.fish
-source ~/.config/fish/completions/fisher.fish
-source ~/.config/fish/functions/tools.fish
-
-# Fish git prompt
-set __fish_git_prompt_showdirtystate 'yes'
-set __fish_git_prompt_showstashstate 'yes'
-set __fish_git_prompt_showuntrackedfiles 'yes'
-set __fish_git_prompt_showupstream 'yes'
-set __fish_git_prompt_color_branch yellow
-set __fish_git_prompt_color_upstream_ahead green
-set __fish_git_prompt_color_upstream_behind red
-
-# Status Chars
-set __fish_git_prompt_char_dirtystate '⚡'
-set __fish_git_prompt_char_stagedstate '👊'
-set __fish_git_prompt_char_untrackedfiles '💥'
-set __fish_git_prompt_char_stashstate '🚪'
-set __fish_git_prompt_char_upstream_ahead '🛩'
-set __fish_git_prompt_char_upstream_behind '⚓'
-
-function fish_prompt
-  set last_status $status
-
-  set_color $fish_color_cwd
-  printf '%s' (prompt_pwd)
-  set_color normal
-
-  printf '%s ' (__fish_git_prompt)
-
-  set_color normal
-end
+# configure fish
+source $HOME/.config/fish/completions/docker.fish
+source $HOME/.config/fish/completions/docker-compose.fish
+source $HOME/.config/fish/completions/fisher.fish
+source $HOME/.config/fish/functions/tools.fish
