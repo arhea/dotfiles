@@ -51,3 +51,5 @@ chsh -s /usr/local/bin/fish
 curl -Lo $HOME/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
 
 fisher install bass
+
+bash ./symlink.sh
