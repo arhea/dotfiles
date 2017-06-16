@@ -1,27 +1,57 @@
+set version_terraform 0.9.8
+set version_packer 1.0.0
 
-set docker_gc_image "spotify/docker-gc:latest"
-set htop_image "jess/htop:latest"
+function tools_update
 
-function brew_update --description "Run Homebrew Update"
-  brew update
-  brew upgrade
-  brew cleanup
-  brew cask cleanup
-  brew doctor
-  brew prune
-end
+  switch (uname)
+  case Linux
+      sudo apt-get update -y
+      sudo apt-get install -y awscli \
+                              software-properties-common \
+                              ca-certificates \
+                              nano \
+                              python-pip \
+                              jq \
+                              curl \
+                              wget \
+                              unzip
+      sudo apt-get upgrade -y
 
-function tools_update --description "Update local containers that are used to run tools such as Node.js, PHP, Ruby, Terraform, and Packer"
+      echo "=> Install HashiCorp Utils"
+      mkdir -p /tmp/hashicorp
+      mkdir -p /tmp/hashicorp/terraform
+      mkdir -p /tmp/hashicorp/packer
 
-  set_color green
+      curl -o /tmp/hashicorp/terraform.zip https://releases.hashicorp.com/terraform/{$version_terraform}/terraform_{$version_terraform}_linux_amd64.zip
+      unzip /tmp/hashicorp/terraform.zip -d /tmp/hashicorp/terraform
+      sudo mv /tmp/hashicorp/terraform/terraform /usr/bin/terraform
+      chmod +x /usr/bin/terraform
+
+      curl -o /tmp/hashicorp/packer.zip https://releases.hashicorp.com/packer/{$version_packer}/packer_{$version_packer}_linux_amd64.zip
+      unzip /tmp/hashicorp/packer.zip -d /tmp/hashicorp/packer
+      mv /tmp/hashicorp/packer/packer /usr/bin/packer
+      chmod +x /usr/bin/packer
+
+      rm -rf /tmp/hashicorp
+
+      sudo apt-get autoremove -y
+
+  case Darwin
+      brew update
+      brew upgrade
+      brew cleanup
+      brew cask cleanup
+      brew doctor
+      brew prune
+  end
+
   echo "=> Pulling Spotify Docker Garbage Collection"
-  set_color normal
-  docker pull $docker_gc_image
+  docker pull spotify/docker-gc:latest
 
-  set_color green
   echo "=> Pulling HTOP"
-  set_color normal
-  docker pull $htop_image
+  docker pull jess/htop:latest
+
+
 end
 
 function docker_gc
@@ -29,7 +59,7 @@ function docker_gc
     -v /etc/localtime:/etc/localtime:ro \
     -v /var/run/docker.sock:/var/run/docker.sock \
     -v /etc:/etc \
-    $docker_gc_image
+    spotify/docker-gc:latest
 
   tools_update
 end
@@ -38,5 +68,5 @@ function htop
   docker run --rm -it --name htop \
 		--pid host \
 		--net none \
-		$htop_image
+		jess/htop:latest
 end
