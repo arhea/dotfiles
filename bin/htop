@@ -1,0 +1,6 @@
+#!/bin/bash
+
+docker run -i --rm --name htop \
+		--pid host \
+		--net none \
+		jess/htop:latest "$@"

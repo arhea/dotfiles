@@ -1,0 +1,9 @@
+#!/bin/bash
+
+docker run -i --rm --name ansible \
+    --pid host \
+    -w /usr/src/app \
+    -v $HOME/.aws:/root/.aws:ro \
+    -v $HOME/.ssh:/root/.ssh:ro \
+    -v $(pwd):/usr/src/app \
+    arhea/ansible:latest "ansible-playbook $@"

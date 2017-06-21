@@ -14,15 +14,9 @@ brew install \
     curl \
     bash \
     fish \
-    fisherman \
     git \
     ruby \
     go \
-    awscli \
-    amazon-ecs-cli \
-    ansible \
-    terraform \
-    packer \
     gnugpg \
     kubernetes-cli \
     kubernetes-helm \
@@ -40,8 +34,7 @@ brew cask install \
     caffeine \
     cyberduck \
     handbrake \
-    vlc \
-    google-cloud-sdk
+    vlc
 
 brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup
 
@@ -49,7 +42,13 @@ echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/fish
 
 curl -Lo $HOME/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
-
 fisher install bass
 
-bash ./symlink.sh
+curl -L https://get.oh-my.fish | fish
+omf install bobthefish
+
+# install n version manager
+curl -L https://git.io/n-install | bash
+
+# install fonts
+cp $(pwd)/fonts/*.ttf $HOME/Library/Fonts
