@@ -34,7 +34,8 @@ brew cask install \
     caffeine \
     cyberduck \
     handbrake \
-    vlc
+    vlc \
+    google-cloud-sdk
 
 brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup
 

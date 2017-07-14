@@ -3,9 +3,9 @@
 sudo su
 
 # install base dependencies
-apt-get update -y
-apt-get upgrade -y
-apt-get install -y apt-transport-https \
+apt update -y
+apt upgrade -y
+apt install -y apt-transport-https \
                   software-properties-common \
                   python-pip \
                   ca-certificates \
@@ -22,13 +22,13 @@ apt-get install -y apt-transport-https \
 
 # install git
 apt-add-repository ppa:git-core/ppa
-apt-get update && apt-get install -y git
+apt update && apt install -y git
 
 # install keybase
 mkdir -p /tmp/keybase
 wget -O /tmp/keybase/keybase.deb https://prerelease.keybase.io/keybase_amd64.deb
 dpkg -i /tmp/keybase/keybase.deb
-apt-get install -f
+apt install -f
 run_keybase
 rm -rf /tmp/keybase
 
@@ -50,20 +50,19 @@ wget -O /tmp/vscode/vscode.deb https://go.microsoft.com/fwlink/?LinkID=760868
 dpkg -i /tmp/vscode/vscode.deb
 rm -rf /tmp/vscode
 
-# install gitkraken
-mkdir -p /tmp/gitkraken
-wget -O /tmp/gitkraken/gitkraken.deb https://release.gitkraken.com/linux/gitkraken-amd64.deb
-dpkg -i /tmp/gitkraken/gitkraken.deb
-rm -rf /tmp/gitkraken
-
 # install docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) edge" > /etc/apt/sources.list.d/docker.list
-apt-get update -y && apt-get install -y docker-ce
+apt update -y && apt install -y docker-ce
+
+# install google-cloud-sdk
+echo "deb https://packages.cloud.google.com/apt cloud-sdk-$(lsb_release -c -s) main" > /etc/apt/sources.list.d/google-cloud-sdk.list
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+apt update && apt install -y google-cloud-sdk
 
 # intall fish shell
 apt-add-repository -y ppa:fish-shell/release-2
-apt-get update -y && apt-get install -y fish
+apt update -y && apt install -y fish
 
 echo "/usr/bin/fish" | sudo tee -a /etc/shells
 chsh -s /usr/bin/fish

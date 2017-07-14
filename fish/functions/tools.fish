@@ -2,20 +2,16 @@ function tools_update
 
   switch (uname)
   case Linux
-      sudo apt-get update -y
-      sudo apt-get install -y software-properties-common \
-                              ca-certificates \
-                              nano \
-                              python-pip \
-                              jq \
-                              curl \
-                              wget \
-                              unzip
-      sudo apt-get upgrade -y
+      sudo apt update -y
+      sudo apt upgrade -y
 
       sudo curl -o /usr/local/bin/docker-compose -L "https://github.com/docker/compose/releases/download/1.14.0/docker-compose-Linux-x86_64"
       sudo chmod +x /usr/local/bin/docker-compose
       docker-compose --version
+
+      sudo curl -o /usr/local/bin/kubectl -LO https://storage.googleapis.com/kubernetes-release/release/(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+      sudo chmod +x /usr/local/bin/kubectl
+      kubectl version
 
   case Darwin
       brew update
@@ -37,9 +33,6 @@ function tools_update
 
   echo "=> Pulling Ansible"
   docker pull arhea/ansible:latest
-
-  echo "=> Pulling Google Cloud CLI"
-  docker pull arhea/gcloud:latest
 
   echo "=> Pulling Spotify Docker Garbage Collection"
   docker pull spotify/docker-gc:latest

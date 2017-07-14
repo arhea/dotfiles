@@ -10,14 +10,15 @@ set -g theme_nerd_fonts no
 
 # setup the path
 set default_path /usr/local/bin /usr/local/sbin /usr/bin /usr/sbin /bin /sbin
-set n_path (dirname (~/n/bin/n which latest))
 
 switch (uname)
 case Linux
     set local_path $HOME/.local/bin
+    set n_path (dirname (~/n/bin/n which latest))
     set -gx PATH $n_path $local_path $default_path
 case Darwin
     set docker_path /Applications/Docker.app/Contents/Resources/bin
+    set n_path $HOME/n/bin
     set -gx PATH $n_path $docker_path $default_path
 
     set -x HOMEBREW_CASK_OPTS "--appdir=/Applications"
