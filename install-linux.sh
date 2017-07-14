@@ -5,19 +5,24 @@ sudo su
 # install base dependencies
 apt-get update -y
 apt-get upgrade -y
-apt-get install -y awscli \
-                  apt-transport-https \
+apt-get install -y apt-transport-https \
                   software-properties-common \
                   python-pip \
                   ca-certificates \
                   nano \
                   curl \
                   wget \
-                  git \
+                  unzip \
                   make \
                   xclip \
                   build-essential \
-                  ruby
+                  jq \
+                  tlp \
+                  tlp-rdw
+
+# install git
+apt-add-repository ppa:git-core/ppa
+apt-get update && apt-get install -y git
 
 # install keybase
 mkdir -p /tmp/keybase
@@ -53,7 +58,7 @@ rm -rf /tmp/gitkraken
 
 # install docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
-add-apt-repository  "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) edge"
+echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) edge" > /etc/apt/sources.list.d/docker.list
 apt-get update -y && apt-get install -y docker-ce
 
 # intall fish shell

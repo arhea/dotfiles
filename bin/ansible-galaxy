@@ -1,9 +1,18 @@
 #!/bin/bash
 
+unset DOCKER_HOST
+unset DOCKER_TLS_VERIFY
+unset DOCKER_CERT_PATH
+
+docker pull arhea/ansible:latest > /dev/null
+
 docker run -i --rm --name ansible \
-    --pid host \
-    -w /usr/src/app \
-    -v $HOME/.aws:/root/.aws:ro \
-    -v $HOME/.ssh:/root/.ssh:ro \
-    -v $(pwd):/usr/src/app \
-    arhea/ansible:latest "ansible-galaxy $@"
+  --user $(id -u):$(id -g) \
+  -v /etc/passwd:/etc/passwd:ro \
+  -v /etc/group:/etc/group:ro \
+  -v $HOME/.aws:/root/.aws:ro \
+  -v $HOME/.ssh:/root/.ssh:ro \
+  -v $(pwd):/usr/src/app \
+  --entrypoint="ansible-galaxy" \
+  -w /usr/src/app \
+  arhea/ansible:latest "$@"

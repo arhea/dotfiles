@@ -10,7 +10,7 @@ set -g theme_nerd_fonts no
 
 # setup the path
 set default_path /usr/local/bin /usr/local/sbin /usr/bin /usr/sbin /bin /sbin
-set n_path $HOME/n/bin
+set n_path (dirname (~/n/bin/n which latest))
 
 switch (uname)
 case Linux

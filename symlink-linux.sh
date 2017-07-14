@@ -33,8 +33,20 @@ keybase pgp export -q 41A4DB43D4DB0DD4 --secret | gpg --allow-secret-key-import 
 ln -sf $(pwd)/bin/packer /usr/local/bin/packer
 ln -sf $(pwd)/bin/terraform /usr/local/bin/terraform
 ln -sf $(pwd)/bin/ansible /usr/local/bin/ansible
+ln -sf $(pwd)/bin/ansible-connection /usr/local/bin/ansible-connection
+ln -sf $(pwd)/bin/ansible-console /usr/local/bin/ansible-console
+ln -sf $(pwd)/bin/ansible-doc /usr/local/bin/ansible-doc
 ln -sf $(pwd)/bin/ansible-galaxy /usr/local/bin/ansible-galaxy
 ln -sf $(pwd)/bin/ansible-playbook /usr/local/bin/ansible-playbook
+ln -sf $(pwd)/bin/ansible-pull /usr/local/bin/ansible-pull
+ln -sf $(pwd)/bin/ansible-vault /usr/local/bin/ansible-vault
+ln -sf $(pwd)/bin/composer /usr/local/bin/composer
+ln -sf $(pwd)/bin/php /usr/local/bin/php
+ln -sf $(pwd)/bin/docker-compose /usr/local/bin/docker-compose
 ln -sf $(pwd)/bin/aws /usr/local/bin/aws
 ln -sf $(pwd)/bin/gcloud /usr/local/bin/gcloud
 ln -sf $(pwd)/bin/htop /usr/local/bin/htop
+
+# Packer
+mkdir -p $HOME/.packer.d
+ln -sf $(pwd)/.packerconfig $HOME/.packerconfig

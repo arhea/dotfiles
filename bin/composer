@@ -4,12 +4,13 @@ unset DOCKER_HOST
 unset DOCKER_TLS_VERIFY
 unset DOCKER_CERT_PATH
 
-docker pull arhea/terraform:latest > /dev/null
+docker pull composer:latest > /dev/null
 
 docker run -i --rm \
   --user $(id -u):$(id -g) \
   -v /etc/passwd:/etc/passwd:ro \
   -v /etc/group:/etc/group:ro \
-  -v $HOME:$HOME \
-  -w $(pwd) \
-  arhea/terraform:latest "$@"
+  -v $HOME/.ssh:/root/.ssh:ro \
+  -v $(pwd):/usr/src/ \
+  -w /usr/src/ \
+  composer:latest "$@"
