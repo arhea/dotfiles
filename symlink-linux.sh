@@ -43,8 +43,6 @@ ln -sf $(pwd)/bin/ansible-vault /usr/local/bin/ansible-vault
 ln -sf $(pwd)/bin/composer /usr/local/bin/composer
 ln -sf $(pwd)/bin/php /usr/local/bin/php
 ln -sf $(pwd)/bin/docker-compose /usr/local/bin/docker-compose
-ln -sf $(pwd)/bin/aws /usr/local/bin/aws
-ln -sf $(pwd)/bin/gcloud /usr/local/bin/gcloud
 ln -sf $(pwd)/bin/htop /usr/local/bin/htop
 
 # Packer
