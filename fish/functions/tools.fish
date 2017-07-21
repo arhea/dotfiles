@@ -13,6 +13,24 @@ function tools_update
       sudo chmod +x /usr/local/bin/kubectl
       kubectl version
 
+      echo "=> Pulling Hashicorp Terraform"
+      docker pull arhea/terraform:latest
+
+      echo "=> Pulling Hashicorp Packer"
+      docker pull arhea/packer:latest
+
+      echo "=> Pulling AWS CLI"
+      docker pull arhea/awscli:latest
+
+      echo "=> Pulling Ansible"
+      docker pull arhea/ansible:latest
+
+      echo "=> Pulling Spotify Docker Garbage Collection"
+      docker pull spotify/docker-gc:latest
+
+      echo "=> Pulling HTOP"
+      docker pull jess/htop:latest
+
   case Darwin
       brew update
       brew upgrade
@@ -21,23 +39,5 @@ function tools_update
       brew doctor
       brew prune
   end
-
-  echo "=> Pulling Hashicorp Terraform"
-  docker pull arhea/terraform:latest
-
-  echo "=> Pulling Hashicorp Packer"
-  docker pull arhea/packer:latest
-
-  echo "=> Pulling AWS CLI"
-  docker pull arhea/awscli:latest
-
-  echo "=> Pulling Ansible"
-  docker pull arhea/ansible:latest
-
-  echo "=> Pulling Spotify Docker Garbage Collection"
-  docker pull spotify/docker-gc:latest
-
-  echo "=> Pulling HTOP"
-  docker pull jess/htop:latest
 
 end
