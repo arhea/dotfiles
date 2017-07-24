@@ -21,6 +21,7 @@ brew install \
     kubernetes-cli \
     kubernetes-helm \
     openssl \
+    cfssl \
     php56 \
     php56-grpc \
     php56-mcrypt \
@@ -32,7 +33,8 @@ brew install \
     packer \
     terraform \
     awscli \
-    htop
+    htop \
+    n
 
 brew cask install \
     caffeine \
@@ -57,7 +59,6 @@ brew cask install \
     navicat-premium-essentials
 
 brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup
-
 
 # download slack
 curl -o ~/Downloads/slack.zip https://downloads.slack-edge.com/mac_releases/Slack-2.6.3-macOS.zip

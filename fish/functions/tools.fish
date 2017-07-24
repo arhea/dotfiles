@@ -32,12 +32,12 @@ function tools_update
       docker pull jess/htop:latest
 
   case Darwin
-      brew update
-      brew upgrade
-      brew cleanup
-      brew cask cleanup
-      brew doctor
-      brew prune
+      echo "=> Upgrading System Packages with Homebrew"
+      brew update ; brew upgrade ; brew cleanup ; brew cask cleanup ; brew doctor ; brew prune
+
+      echo "=> Updating Node"
+      n latest
+      npm install -g npm
   end
 
 end
