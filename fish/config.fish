@@ -16,12 +16,15 @@ case Linux
     set local_path $HOME/.local/bin
     set -gx PATH $local_path $default_path
 case Darwin
+    set -gx N_PREFIX "$HOME/.n"
+    set -gx HOMEBREW_CASK_OPTS "--appdir=/Applications"
+    set -gx GOPATH "$HOME/Code/go-workspace"
+    set -gx GOROOT "/usr/local/Cellar/go/1.8.3/libexec"
+
+    set ansible_path (brew --prefix ansible)/bin
     set docker_path /Applications/Docker.app/Contents/Resources/bin
 
-    set -gx PATH $docker_path $default_path
-
-    set -x N_PREFIX "$HOME/.n"
-    set -x HOMEBREW_CASK_OPTS "--appdir=/Applications"
+    set -gx PATH $GOROOT $GOPATH $ansible_path $docker_path $default_path
 end
 
 # setup fish function path
