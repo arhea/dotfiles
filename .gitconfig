@@ -5,7 +5,13 @@
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
 	pager = diff-highlight | diff-so-fancy | less -r
-	editor = code
+	editor = code --wait
+
+[diff]
+  tool = default-difftool
+
+[difftool "default-difftool"]
+  cmd = code --wait --diff $LOCAL $REMOTE
 
 [color "branch"]
 	current = yellow reverse
@@ -26,7 +32,7 @@
 	untracked = cyan
 
 [merge]
-    tool = opendiff
+    tool = default-difftool
 
 [color "diff-highlight"]
 	oldNormal = "red bold"
@@ -85,6 +91,9 @@
 	smtpServer = smtp.gmail.com
 	smtpUser = alex.rhea@gmail.com
 	smtpServerPort = 587
+
+[credential "https://bitbucket.common.imprivata.com"]
+	username = arhea
 
 [credential]
 	helper = store --file ~/.git-credentials
