@@ -43,7 +43,7 @@ brew cask install \
     vlc \
     visual-studio-code \
     google-cloud-sdk \
-    iterm \
+    iterm2 \
     keybase \
     ipvanish-vpn \
     dropbox \

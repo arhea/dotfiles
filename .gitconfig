@@ -72,6 +72,9 @@
 	smudge = git-lfs smudge %f
 	required = true
 
+[gpg]
+  program = /usr/local/bin/gpg
+
 [user]
 	name = Alex Rhea
 	email = alex.rhea@gmail.com

@@ -36,8 +36,12 @@ function tools_update
       brew update ; brew upgrade ; brew cleanup ; brew cask cleanup ; brew doctor ; brew prune
 
       echo "=> Updating Node"
-      n latest
+      n lts
       npm install -g npm
   end
 
+end
+
+function imprivata_vpn
+  sudo openconnect vpn.imprivata.com -u arhea
 end
