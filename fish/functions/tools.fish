@@ -13,35 +13,47 @@ function tools_update
       sudo chmod +x /usr/local/bin/kubectl
       kubectl version
 
-      echo "=> Pulling Hashicorp Terraform"
+      console_info "Pulling Hashicorp Terraform"
       docker pull arhea/terraform:latest
 
-      echo "=> Pulling Hashicorp Packer"
+      console_info "Pulling Hashicorp Packer"
       docker pull arhea/packer:latest
 
-      echo "=> Pulling AWS CLI"
+      console_info "Pulling AWS CLI"
       docker pull arhea/awscli:latest
 
-      echo "=> Pulling Ansible"
+      console_info "Pulling Ansible"
       docker pull arhea/ansible:latest
 
-      echo "=> Pulling Spotify Docker Garbage Collection"
+      console_info "Pulling Spotify Docker Garbage Collection"
       docker pull spotify/docker-gc:latest
 
-      echo "=> Pulling HTOP"
+      console_info "Pulling HTOP"
       docker pull jess/htop:latest
 
   case Darwin
-      echo "=> Upgrading System Packages with Homebrew"
+      console_info "Upgrading System Packages with Homebrew"
       brew update ; brew upgrade ; brew cleanup ; brew cask cleanup ; brew doctor ; brew prune
 
-      echo "=> Updating Node"
+      console_info "Updating Node"
       n lts
       npm install -g npm
   end
 
 end
 
-function imprivata_vpn
-  sudo openconnect vpn.imprivata.com -u arhea
+function console_info
+  echo -e "\033[0;32m=> $argv\033[0m"
+end
+
+function console_warn
+  echo -e "\033[0;33m=> $argv\033[0m"
+end
+
+function console_error
+  echo -e "\033[0;31m=> $argv\033[0m"
+end
+
+function console_debug
+  echo -e "\033[1;34m=> $argv\033[0m"
 end
