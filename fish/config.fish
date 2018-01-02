@@ -21,11 +21,12 @@ case Darwin
     set -gx GOPATH "$HOME/Code/go-workspace"
     set -gx GOROOT (brew --prefix go)/libexec
 
+    set composer_path "$HOME/.composer/vendor/bin"
     set ansible_path (brew --prefix ansible)/bin
     set docker_path /Applications/Docker.app/Contents/Resources/bin
     set n_path "$HOME/.n/bin"
 
-    set -gx PATH $GOROOT $GOPATH $n_path $ansible_path $docker_path $default_path
+    set -gx PATH $GOROOT $GOPATH $n_path $ansible_path $composer_path $docker_path $default_path
 end
 
 # setup fish function path
@@ -39,3 +40,4 @@ source $HOME/.config/fish/completions/docker.fish
 source $HOME/.config/fish/completions/docker-compose.fish
 source $HOME/.config/fish/completions/fisher.fish
 source $HOME/.config/fish/functions/tools.fish
+source $HOME/.config/fish/functions/iterm.fish
