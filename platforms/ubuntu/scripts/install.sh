@@ -81,17 +81,17 @@ omf install bobthefish
 curl -L https://git.io/n-install | bash
 
 # install terraform
-local terraform_version="0.11.7"
+terraform_version="0.11.7"
 mkdir -p /tmp/terraform
-wget -O /tmp/terraform/terraform.zip https://releases.hashicorp.com/terraform/{$terraform_version}/terraform_{$terraform_version}_linux_amd64.zip
+wget -O /tmp/terraform/terraform.zip https://releases.hashicorp.com/terraform/${terraform_version}/terraform_${terraform_version}_linux_amd64.zip
 unzip /tmp/terraform/terraform.zip -d /tmp/terraform/terraform
 mv /tmp/terraform/terraform/terraform /usr/bin/terraform
 rm -rf /tmp/terraform
 
 # install packer
-local packer_version="1.2.4"
+packer_version="1.2.4"
 mkdir -p /tmp/packer
-wget -O /tmp/packer/packer.zip https://releases.hashicorp.com/packer/{$packer_version}/packer_{$packer_version}_linux_amd64.zip
+wget -O /tmp/packer/packer.zip https://releases.hashicorp.com/packer/${packer_version}/packer_${packer_version}_linux_amd64.zip
 unzip /tmp/packer/packer.zip -d /tmp/terraform/terraform
 mv /tmp/packer/packer/packer /usr/bin/packer
 rm -rf /tmp/packer
