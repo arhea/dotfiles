@@ -52,7 +52,7 @@ end
 
 function _hashicorp_latest_release
   set -lx PRODUCT_NAME $argv[1]
-  echo (_github_latest_release "hashicorp/$PRODUCT_NAME") | tr -d 'v,'
+  echo (_github_latest_release "hashicorp/$PRODUCT_NAME" | tr -d 'v,')
 end
 
 function _github_latest_release
