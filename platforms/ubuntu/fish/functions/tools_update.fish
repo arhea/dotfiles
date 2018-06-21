@@ -41,10 +41,10 @@ end
 
 function _hashicorp_latest_release
   set -lx PRODUCT_NAME $argv[1]
-  return (_github_latest_release "hashicorp/$PRODUCT_NAME") | tr -d 'v,'
+  echo (_github_latest_release "hashicorp/$PRODUCT_NAME") | tr -d 'v,'
 end
 
 function _github_latest_release
   set -lx REPO_NAME $argv[1]
-  return (curl --silent "https://api.github.com/repos/$REPO_NAME/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+  echo (curl --silent "https://api.github.com/repos/$REPO_NAME/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
 end
