@@ -15,10 +15,10 @@ function tools_update
   _docker_compose_install
 
   console_info "Updating Terraform"
-  _hashicorp_update_tool "terraform"
+  _hashicorp_terraform_install "terraform"
 
   console_info "Updating Packer"
-  _hashicorp_update_tool "packer"
+  _hashicorp_packer_install "packer"
 
 end
 
