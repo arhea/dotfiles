@@ -37,9 +37,23 @@ function _docker_compose_install
   docker-compose --version
 end
 
-function _hashicorp_update_tool
+function _hashicorp_terraform_install
+  set -lx HASHICORP_PRODUCT "terraform"
+  set -lx HASHICORP_VERSION (curl --silent "https://api.github.com/repos/hashicorp/terraform/releases/latest" | jq -r '.tag_name' | tr -d 'v,')
+
+  _hashicorp_install $HASHICORP_PRODUCT $HASHICORP_VERSION
+end
+
+function _hashicorp_packer_install
+  set -lx HASHICORP_PRODUCT "packer"
+  set -lx HASHICORP_VERSION (curl --silent "https://api.github.com/repos/hashicorp/packer/tags" | jq -r '.[0].name' | tr -d 'v,')
+
+  _hashicorp_install $HASHICORP_PRODUCT $HASHICORP_VERSION
+end
+
+function _hashicorp_install
   set -lx HASHICORP_PRODUCT $argv[1]
-  set -lx HASHICORP_VERSION (_hashicorp_latest_release "$HASHICORP_PRODUCT")
+  set -lx HASHICORP_VERSION $argv[2]
 
   mkdir -p /tmp/$HASHICORP_PRODUCT
   wget -O /tmp/$HASHICORP_PRODUCT/$HASHICORP_PRODUCT.zip https://releases.hashicorp.com/$HASHICORP_PRODUCT/$HASHICORP_VERSION/$HASHICORP_PRODUCT\_$HASHICORP_VERSION\_linux_amd64.zip
@@ -57,5 +71,5 @@ end
 
 function _github_latest_release
   set -lx REPO_NAME $argv[1]
-  echo (curl --silent "https://api.github.com/repos/$REPO_NAME/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+  echo (curl --silent "https://api.github.com/repos/$REPO_NAME/releases/latest" | jq -r '.tag_name')
 end
