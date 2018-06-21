@@ -28,6 +28,10 @@ apt install -y apt-transport-https \
 apt-add-repository ppa:git-core/ppa
 apt update && apt install -y git
 
+# install ansible
+apt-add-repository ppa:ansible/ansible
+apt-get update && apt-get install -y ansible
+
 # install keybase
 mkdir -p /tmp/keybase
 wget -O /tmp/keybase/keybase.deb https://prerelease.keybase.io/keybase_amd64.deb
@@ -79,22 +83,6 @@ omf install bobthefish
 
 # install n version manager
 curl -L https://git.io/n-install | bash
-
-# install terraform
-terraform_version="0.11.7"
-mkdir -p /tmp/terraform
-wget -O /tmp/terraform/terraform.zip https://releases.hashicorp.com/terraform/${terraform_version}/terraform_${terraform_version}_linux_amd64.zip
-unzip /tmp/terraform/terraform.zip -d /tmp/terraform/terraform
-mv /tmp/terraform/terraform/terraform /usr/bin/terraform
-rm -rf /tmp/terraform
-
-# install packer
-packer_version="1.2.4"
-mkdir -p /tmp/packer
-wget -O /tmp/packer/packer.zip https://releases.hashicorp.com/packer/${packer_version}/packer_${packer_version}_linux_amd64.zip
-unzip /tmp/packer/packer.zip -d /tmp/terraform/terraform
-mv /tmp/packer/packer/packer /usr/bin/packer
-rm -rf /tmp/packer
 
 # install fonts
 mkdir -p ${HOME_DIR}/.local/share/fonts
