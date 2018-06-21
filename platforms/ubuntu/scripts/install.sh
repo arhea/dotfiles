@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -xe
 
 HOME_DIR=$1
 SHARED_DIR=${PLATFORM_DIR}/../shared

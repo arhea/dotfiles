@@ -28,10 +28,10 @@ function tools_update
 end
 
 function _hashicorp_update_tool
-  HASHICORP_PRODUCT=$1
-  HASHICORP_VERSION=(_hashicorp_latest_release "${HASHICORP_PRODUCT}")
+  set -lx HASHICORP_PRODUCT $argv[1]
+  set -lx HASHICORP_VERSION (_hashicorp_latest_release "${HASHICORP_PRODUCT}")
 
-  mkdir -p /tmp/$1
+  mkdir -p /tmp/${HASHICORP_PRODUCT}
   wget -O /tmp/${HASHICORP_PRODUCT}/${HASHICORP_PRODUCT}.zip https://releases.hashicorp.com/${HASHICORP_PRODUCT}/${HASHICORP_VERSION}/${HASHICORP_PRODUCT}_${HASHICORP_VERSION}_linux_amd64.zip
   unzip /tmp/${HASHICORP_PRODUCT}/${HASHICORP_PRODUCT}.zip -d /tmp/${HASHICORP_PRODUCT}/${HASHICORP_PRODUCT}
   mv /tmp/${HASHICORP_PRODUCT}/${HASHICORP_PRODUCT}/${HASHICORP_PRODUCT} /usr/local/bin/${HASHICORP_PRODUCT}
@@ -40,9 +40,11 @@ function _hashicorp_update_tool
 end
 
 function _hashicorp_latest_release
-  return (_github_latest_release "hashicorp/$1") | tr -d 'v,'
+  set -lx PRODUCT_NAME $argv[1]
+  return (_github_latest_release "hashicorp/$PRODUCT_NAME") | tr -d 'v,'
 end
 
 function _github_latest_release
-  return (curl --silent "https://api.github.com/repos/$1/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+  set -lx REPO_NAME $argv[1]
+  return (curl --silent "https://api.github.com/repos/$REPO_NAME/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
 end
