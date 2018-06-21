@@ -9,15 +9,10 @@ function tools_update
   pip install --upgrade pip
 
   console_info "Updating Kubernetes CLI"
-  curl -o /usr/local/bin/kubectl -LO https://storage.googleapis.com/kubernetes-release/release/(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
-  chmod +x /usr/local/bin/kubectl
-  kubectl version
+  _kubectl_install
 
   console_info "Updating Docker Compose CLI"
-  set -lx COMPOSE_VERSION (_github_latest_release "docker/compose")
-  curl -o /usr/local/bin/docker-compose -L "https://github.com/docker/compose/releases/download/$COMPOSE_VERSION/docker-compose-Linux-x86_64"
-  chmod +x /usr/local/bin/docker-compose
-  docker-compose --version
+  _docker_compose_install
 
   console_info "Updating Terraform"
   _hashicorp_update_tool "terraform"
@@ -27,6 +22,21 @@ function tools_update
 
 end
 
+function _kubectl_install
+  sudo curl -o /usr/local/bin/kubectl -LO https://storage.googleapis.com/kubernetes-release/release/(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+  sudo chown -R $USER:$USER /usr/local/bin/$HASHICORP_PRODUCT
+  chmod +x /usr/local/bin/kubectl
+  kubectl version
+end
+
+function _docker_compose_install
+  set -lx COMPOSE_VERSION (_github_latest_release "docker/compose")
+  sudo curl -o /usr/local/bin/docker-compose -L "https://github.com/docker/compose/releases/download/$COMPOSE_VERSION/docker-compose-Linux-x86_64"
+  sudo chown -R $USER:$USER /usr/local/bin/$HASHICORP_PRODUCT
+  chmod +x /usr/local/bin/docker-compose
+  docker-compose --version
+end
+
 function _hashicorp_update_tool
   set -lx HASHICORP_PRODUCT $argv[1]
   set -lx HASHICORP_VERSION (_hashicorp_latest_release "$HASHICORP_PRODUCT")
@@ -34,8 +44,9 @@ function _hashicorp_update_tool
   mkdir -p /tmp/$HASHICORP_PRODUCT
   wget -O /tmp/$HASHICORP_PRODUCT/$HASHICORP_PRODUCT.zip https://releases.hashicorp.com/$HASHICORP_PRODUCT/$HASHICORP_VERSION/$HASHICORP_PRODUCT\_$HASHICORP_VERSION\_linux_amd64.zip
   unzip /tmp/$HASHICORP_PRODUCT/$HASHICORP_PRODUCT.zip -d /tmp/$HASHICORP_PRODUCT/$HASHICORP_PRODUCT
-  mv /tmp/$HASHICORP_PRODUCT/$HASHICORP_PRODUCT/$HASHICORP_PRODUCT /usr/local/bin/$HASHICORP_PRODUCT
+  sudo mv /tmp/$HASHICORP_PRODUCT/$HASHICORP_PRODUCT/$HASHICORP_PRODUCT /usr/local/bin/$HASHICORP_PRODUCT
   rm -rf /tmp/$HASHICORP_PRODUCT
+  sudo chown -R $USER:$USER /usr/local/bin/$HASHICORP_PRODUCT
   chmod +x /usr/local/bin/$HASHICORP_PRODUCT
 end
 
