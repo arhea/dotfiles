@@ -14,7 +14,7 @@ function tools_update
   kubectl version
 
   console_info "Updating Docker Compose CLI"
-  COMPOSE_VERSION=(_github_latest_release "docker/compose")
+  set -lx COMPOSE_VERSION (_github_latest_release "docker/compose")
   curl -o /usr/local/bin/docker-compose -L "https://github.com/docker/compose/releases/download/$COMPOSE_VERSION/docker-compose-Linux-x86_64"
   chmod +x /usr/local/bin/docker-compose
   docker-compose --version
