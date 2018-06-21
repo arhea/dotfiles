@@ -73,6 +73,7 @@ function _go_install
   set -lx GO_VERSION (curl --silent "https://api.github.com/repos/golang/go/tags" | jq -r '.[0].name' | tr -d 'v,')
 
   mkdir -p /tmp/golang
+  mkdir -p $HOME/code/go
   sudo curl -o /tmp/golang/go$GO_VERSION.linux-amd64.tar.gz https://dl.google.com/go/go$GO_VERSION.linux-amd64.tar.gz
   sudo tar -C $HOME/code/go -xzf /tmp/golang/go$GO_VERSION.linux-amd64.tar.gz
   sudo rm -rf /tmp/golang
