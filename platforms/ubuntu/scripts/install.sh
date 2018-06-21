@@ -22,7 +22,8 @@ apt install -y apt-transport-https \
                   build-essential \
                   jq \
                   tlp \
-                  tlp-rdw
+                  tlp-rdw \
+                  gnupg2
 
 # install git
 apt-add-repository ppa:git-core/ppa

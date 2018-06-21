@@ -69,6 +69,32 @@ function _hashicorp_latest_release
   echo (_github_latest_release "hashicorp/$PRODUCT_NAME" | tr -d 'v,')
 end
 
+function _go_install
+  set -lx GO_VERSION (curl --silent "https://api.github.com/repos/golang/go/tags" | jq -r '.[0].name' | tr -d 'v,')
+
+  mkdir -p /tmp/golang
+  sudo curl -o /tmp/golang/go$GO_VERSION.linux-amd64.tar.gz https://dl.google.com/go/go$GO_VERSION.linux-amd64.tar.gz
+  sudo tar -C $HOME/code/go -xzf /tmp/golang/go$GO_VERSION.linux-amd64.tar.gz
+  sudo rm -rf /tmp/golang
+
+  sudo chown -R $USER:$USER $HOME/code/go
+  chmod +x $HOME/code/go/bin/go
+  chmod +x $HOME/code/go/bin/gofmt
+  chmod +x $HOME/code/go/bin/godoc
+end
+
+function _cfssl_install
+  set -lx CFSSL_VERSION (_github_latest_release "cloudflare/cfssl")
+
+  mkdir -p /tmp/cfssl
+  wget -O /tmp/cfssl/cfssl.zip https://github.com/cloudflare/cfssl/archive/$CFSSL_VERSION.zip
+  unzip /tmp/cfssl/cfssl-$CFSSL_VERSION.zip -d /tmp/cfssl/cfssl
+  sudo mv /tmp/$HASHICORP_PRODUCT/$HASHICORP_PRODUCT/$HASHICORP_PRODUCT /usr/local/bin/$HASHICORP_PRODUCT
+  rm -rf /tmp/$HASHICORP_PRODUCT
+  sudo chown -R $USER:$USER /usr/local/bin/$HASHICORP_PRODUCT
+  chmod +x /usr/local/bin/$HASHICORP_PRODUCT
+end
+
 function _github_latest_release
   set -lx REPO_NAME $argv[1]
   echo (curl --silent "https://api.github.com/repos/$REPO_NAME/releases/latest" | jq -r '.tag_name')
