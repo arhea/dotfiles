@@ -31,7 +31,7 @@ ln -sf ${PLATFORM_DIR}/fish/config.fish ${FISH_DIR}/config.fish
 ln -sf ${PLATFORM_DIR}/fish/aliases.fish ${FISH_DIR}/aliases.fish
 
 # visual studio code
-ln -sf ${SHARED_DIR}/visual-studio-code/settings.json ${HOME_DIR}/Library/Application\ Support/Code/User/settings.json
+# ln -sf ${SHARED_DIR}/visual-studio-code/settings.json ${HOME_DIR}/Library/Application\ Support/Code/User/settings.json
 
 # gpg
 mkdir -p ${GPG_DIR}
