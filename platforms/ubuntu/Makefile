@@ -5,4 +5,4 @@ install:
 	./scripts/gpg.sh $(HOME);
 
 symlink:
-	sudo ./scripts/symlink.sh $(HOME);
+	./scripts/symlink.sh $(HOME);
