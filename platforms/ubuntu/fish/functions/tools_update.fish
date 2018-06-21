@@ -24,7 +24,7 @@ end
 
 function _kubectl_install
   sudo curl -o /usr/local/bin/kubectl -LO https://storage.googleapis.com/kubernetes-release/release/(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
-  sudo chown -R $USER:$USER /usr/local/bin/$HASHICORP_PRODUCT
+  sudo chown -R $USER:$USER /usr/local/bin/kubectl
   chmod +x /usr/local/bin/kubectl
   kubectl version
 end
@@ -32,7 +32,7 @@ end
 function _docker_compose_install
   set -lx COMPOSE_VERSION (_github_latest_release "docker/compose")
   sudo curl -o /usr/local/bin/docker-compose -L "https://github.com/docker/compose/releases/download/$COMPOSE_VERSION/docker-compose-Linux-x86_64"
-  sudo chown -R $USER:$USER /usr/local/bin/$HASHICORP_PRODUCT
+  sudo chown -R $USER:$USER /usr/local/bin/docker-compose
   chmod +x /usr/local/bin/docker-compose
   docker-compose --version
 end
