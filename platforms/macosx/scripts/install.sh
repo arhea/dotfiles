@@ -4,11 +4,16 @@ HOME_DIR=$1
 SHARED_DIR=${PLATFORM_DIR}/../shared
 PLATFORM_DIR=$(pwd)
 
+mkdir -p /usr/local/bin
+mkdir -p /usr/local/sbin
+
+chown -R $USER /usr/local/bin
+chown -R $USER /usr/local/sbin
+
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup
 
-brew tap fisherman/tap
 brew tap homebrew/versions
 brew tap homebrew/php
 
@@ -82,9 +87,6 @@ curl -o ~/Downloads/1password.dmg https://app-updates.agilebits.com/download/OPM
 # install fish
 echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/fish
-
-curl -Lo ${HOME_DIR}/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
-fish -c "fisher install bass"
 
 curl -L https://get.oh-my.fish | fish
 omf install bobthefish

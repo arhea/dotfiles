@@ -9,7 +9,7 @@ set -g theme_powerline_fonts no
 set -g theme_nerd_fonts no
 
 # setup the path
-set default_path /usr/local/bin /usr/bin /usr/sbin /bin /sbin
+set default_path /usr/local/bin /usr/local/sbin /usr/bin /usr/sbin /bin /sbin
 
 set -gx N_PREFIX "$HOME/.n"
 set -gx HOMEBREW_CASK_OPTS "--appdir=/Applications"

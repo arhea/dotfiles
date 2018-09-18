@@ -20,6 +20,9 @@ function tools_update
   console_info "Updating Packer"
   _hashicorp_packer_install "packer"
 
+  console_info "Updating Fisherman"
+  curl -Lo ~/code/dotfiles/platforms/shared/fish/functions/fisher.fish --create-dirs https://git.io/fisher
+
 end
 
 function _kubectl_install
@@ -85,15 +88,7 @@ function _go_install
 end
 
 function _cfssl_install
-  set -lx CFSSL_VERSION (_github_latest_release "cloudflare/cfssl")
 
-  mkdir -p /tmp/cfssl
-  wget -O /tmp/cfssl/cfssl.zip https://github.com/cloudflare/cfssl/archive/$CFSSL_VERSION.zip
-  unzip /tmp/cfssl/cfssl-$CFSSL_VERSION.zip -d /tmp/cfssl/cfssl
-  sudo mv /tmp/$HASHICORP_PRODUCT/$HASHICORP_PRODUCT/$HASHICORP_PRODUCT /usr/local/bin/$HASHICORP_PRODUCT
-  rm -rf /tmp/$HASHICORP_PRODUCT
-  sudo chown -R $USER:$USER /usr/local/bin/$HASHICORP_PRODUCT
-  chmod +x /usr/local/bin/$HASHICORP_PRODUCT
 end
 
 function _github_latest_release

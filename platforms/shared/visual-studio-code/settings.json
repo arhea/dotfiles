@@ -4,5 +4,5 @@
   "editor.wordWrap": true,
   "window.zoomLevel": 0,
   "extensions.autoUpdate": true,
-  "terraform.formatOnSave": true
+  "terraform.format.enable": true
 }

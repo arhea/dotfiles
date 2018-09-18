@@ -41,20 +41,11 @@
 	newHighlight = "green bold 22"
 
 [url "git@github.com:"]
-  pushInsteadOf = https://github.com/
-  pushInsteadOf = "github:"
+  insteadOf = "https://github.com/"
+
+[url "git@github.com:"]
   pushInsteadOf = "git://github.com/"
-
-[url "git://github.com/"]
-  insteadOf = "github:"
-
-[url "git@gist.github.com:"]
-  insteadOf = "gst:"
-  pushInsteadOf = "gist:"
-  pushInsteadOf = "git://gist.github.com/"
-
-[url "git://gist.github.com/"]
-  insteadOf = "gist:"
+  pushInsteadOf = "https://github.com/"
 
 [help]
   # Automatically correct and execute mistyped commands
@@ -94,9 +85,6 @@
 	smtpServer = smtp.gmail.com
 	smtpUser = alex.rhea@gmail.com
 	smtpServerPort = 587
-
-[credential "https://bitbucket.common.imprivata.com"]
-	username = arhea
 
 [credential]
 	helper = store --file ~/.git-credentials
