@@ -87,10 +87,6 @@ function _go_install
   chmod +x $HOME/code/go/bin/godoc
 end
 
-function _cfssl_install
-
-end
-
 function _github_latest_release
   set -lx REPO_NAME $argv[1]
   echo (curl --silent "https://api.github.com/repos/$REPO_NAME/releases/latest" | jq -r '.tag_name')

@@ -4,5 +4,13 @@
   "editor.wordWrap": true,
   "window.zoomLevel": 0,
   "extensions.autoUpdate": true,
-  "terraform.format.enable": true
+  "terraform.format.enable": true,
+  "github.hosts": [
+    {
+      "host": "https://github.com",
+      "username": "oauth",
+      "token": "system"
+    }
+  ],
+  "javascript.updateImportsOnFileMove.enabled": "always"
 }
