@@ -21,11 +21,11 @@ mkdir -p ${FISH_DIR}
 mkdir -p ${FISH_DIR}/functions
 
 for FILE_NAME in ${SHARED_DIR}/fish/functions/*.fish; do
-    ln -sf $FILE_NAME ${FISH_DIR}/functions/$(basename ${FILE_NAME})
+  ln -sf $FILE_NAME ${FISH_DIR}/functions/$(basename ${FILE_NAME})
 done
 
 for FILE_NAME in ${PLATFORM_DIR}/fish/functions/*.fish; do
-    ln -sf $FILE_NAME ${FISH_DIR}/functions/$(basename ${FILE_NAME})
+  ln -sf $FILE_NAME ${FISH_DIR}/functions/$(basename ${FILE_NAME})
 done
 
 ln -sf ${PLATFORM_DIR}/fish/config.fish ${FISH_DIR}/config.fish
@@ -40,5 +40,5 @@ ln -sf ${PLATFORM_DIR}/iterm2/com.googlecode.iterm2.plist ${HOME_DIR}/Library/Pr
 # gpg
 mkdir -p ${GPG_DIR}
 for FILE_NAME in ${SHARED_DIR}/gnupg/*.conf; do
-    ln -sf $FILE_NAME ${GPG_DIR}/$(basename ${FILE_NAME})
+  ln -sf $FILE_NAME ${GPG_DIR}/$(basename ${FILE_NAME})
 done
