@@ -10,10 +10,10 @@ mkdir -p /usr/local/sbin
 chown -R $USER /usr/local/bin
 chown -R $USER /usr/local/sbin
 
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup
-
+brew update && brew upgrade
 brew tap homebrew/versions
 
 # install cli tools
@@ -23,19 +23,33 @@ brew install \
   bash \
   fish \
   git \
-  ruby \
-  go \
   gnupg \
+  openssl \
+  terminal-notifier \
+  wget --enable-iri
+
+# install lnaguages
+brew install go ruby n python
+
+# install node
+n lts
+npm install -g npm
+
+# install pip
+pip install --upgrade pip six
+pip install aws-google-auth
+
+# install cloud tools
+brew install \
   kubernetes-cli \
   kubernetes-helm \
-  openssl \
   cfssl \
-  terminal-notifier \
-  wget --enable-iri \
   packer \
   terraform \
   awscli \
-  n
+  azure-cli \
+  google-cloud-sdk \
+  homebrew/cask-versions/docker-edge
 
 # install applications
 brew install \
@@ -43,7 +57,6 @@ brew install \
   cyberduck \
   handbrake \
   visual-studio-code \
-  google-cloud-sdk \
   iterm2 \
   keybase \
   ipvanish-vpn \
@@ -59,8 +72,13 @@ brew install \
   1password \
   1password-cli \
   slack \
-  homebrew/cask-drivers/logitech-options
+  homebrew/cask-drivers/logitech-options \
+  sequel-pro
 
+# install conferencing tools
+brew cask install \
+  zoomus \
+  amazon-chime
 
 brew update && brew cleanup && brew cleanup && brew prune
 
