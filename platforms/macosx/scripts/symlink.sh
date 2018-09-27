@@ -1,6 +1,5 @@
 #!/bin/bash -ex
 
-
 HOME_DIR=$1
 PLATFORM_DIR=$(pwd)
 SHARED_DIR=$(pwd)/../shared

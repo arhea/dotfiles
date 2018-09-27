@@ -1,6 +1,6 @@
 function upgrade -d "Upgrade System Components"
-  set -l components (string trim $argv[1])
-  set -l components (string lower $components)
+  set -l components (string trim $argv[1]);
+  set -l components (string lower $components);
 
   if test -z $components
     console_debug "Default to All Components"
@@ -23,18 +23,24 @@ function upgrade -d "Upgrade System Components"
 
   end
 
+  if begin contains "all" $components; or contains "ruby" $components; end
+    console_info "Upgrading Ruby Gems"
+    gem update ; gem update --system
+  end
+
   if begin contains "all" $components; or contains "node" $components; end
-  console_info "Upgrading Node and NPM"
+    console_info "Upgrading Node and NPM"
     n lts ; npm install -g npm
   end
 
-  if begin contains "all" $components; or contains "pip" $components; end
-  console_info "Upgrade Python Pip"
+  if begin contains "all" $components; or contains "python" $components; end
+    console_info "Upgrade Python Pip"
     pip install --upgrade pip six
+    pip3 install --upgrade pip six
   end
 
   if begin contains "all" $components; or contains "fish" $components; end
-  console_info "Upgrade Fisher"
+    console_info "Upgrade Fisher"
     download https://git.io/fisher ~/code/dotfiles/platforms/shared/fish/functions/fisher.fish
   end
 
