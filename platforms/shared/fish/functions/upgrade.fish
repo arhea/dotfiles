@@ -12,6 +12,9 @@ function upgrade -d "Upgrade System Components"
   if begin contains "all" $components; or contains "system" $components; end
 
     if which brew > /dev/null
+      console_info "Checking For Software Updates (Note: System will reboot if needed.)"
+      softwareupdate -ir
+
       console_info "Upgrade Packages With Homebrew"
       brew update ; brew upgrade ; brew cleanup ; brew doctor ; brew prune
     end
