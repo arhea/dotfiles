@@ -5,12 +5,12 @@
   "window.zoomLevel": 0,
   "extensions.autoUpdate": true,
   "terraform.format.enable": true,
-  "github.hosts": [
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "githubPullRequests.hosts": [
     {
       "host": "https://github.com",
       "username": "oauth",
       "token": "system"
     }
-  ],
-  "javascript.updateImportsOnFileMove.enabled": "always"
+  ]
 }

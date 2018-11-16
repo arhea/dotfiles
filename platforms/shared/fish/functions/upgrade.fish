@@ -26,6 +26,11 @@ function upgrade -d "Upgrade System Components"
 
   end
 
+  if begin contains "all" $components; or contains "google" $components; end
+    console_info "Upgrade Google Cloud SDK"
+    gcloud components update
+  end
+
   if begin contains "all" $components; or contains "ruby" $components; end
     console_info "Upgrading Ruby Gems"
     gem update ; gem update --system
@@ -39,7 +44,6 @@ function upgrade -d "Upgrade System Components"
   if begin contains "all" $components; or contains "python" $components; end
     console_info "Upgrade Python Pip"
     pip install --upgrade pip six
-    pip3 install --upgrade pip six
   end
 
   if begin contains "all" $components; or contains "fish" $components; end

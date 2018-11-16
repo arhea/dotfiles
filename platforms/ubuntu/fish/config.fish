@@ -1,3 +1,8 @@
+# set the language
+set -gx LC_ALL en_US.UTF-8
+set -gx LANG en_US.UTF-8
+set -gx LANGUAGE en_US.UTF-8
+
 # set the default editor
 set -U EDITOR code
 

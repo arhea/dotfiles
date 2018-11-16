@@ -51,12 +51,12 @@ sudo defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 console_debug "Bluetooth"
 # configure bluetooth
 sudo defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Max (editable)" 80
-sudo defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" 40
+sudo defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" 80
 sudo defaults write com.apple.BluetoothAudioAgent "Apple Initial Bitpool (editable)" 80
-sudo defaults write com.apple.BluetoothAudioAgent "Apple Initial Bitpool Min (editable)" 40
+sudo defaults write com.apple.BluetoothAudioAgent "Apple Initial Bitpool Min (editable)" 80
 sudo defaults write com.apple.BluetoothAudioAgent "Negotiated Bitpool" 80
 sudo defaults write com.apple.BluetoothAudioAgent "Negotiated Bitpool Max" 80
-sudo defaults write com.apple.BluetoothAudioAgent "Negotiated Bitpool Min" 40
+sudo defaults write com.apple.BluetoothAudioAgent "Negotiated Bitpool Min" 80
 
 console_debug "Keyboard Lighting"
 
