@@ -1,8 +1,8 @@
 #!/bin/bash
 
 HOME_DIR=$1
-SHARED_DIR=${PLATFORM_DIR}/../shared
 PLATFORM_DIR=$(pwd)
+SHARED_DIR=${PLATFORM_DIR}/../shared
 
 mkdir -p /usr/local/bin
 mkdir -p /usr/local/sbin
@@ -14,7 +14,9 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 brew update && brew upgrade
-brew tap homebrew/versions
+brew tap homebrew/cask-versions
+brew tap homebrew/cask-drivers
+brew tap homebrew/cask-fonts
 
 # install cli tools
 brew install \
@@ -26,18 +28,19 @@ brew install \
   gnupg \
   openssl \
   terminal-notifier \
+  httpie \
   wget --enable-iri
 
 # install lnaguages
 brew install go ruby n python
+ln -sf /usr/local/bin/python3 /usr/local/bin/python
 
 # install node
 n lts
 npm install -g npm
 
 # install pip
-pip install --upgrade pip six
-pip install aws-google-auth
+pip install --upgrade pip six aws-google-auth
 
 # install cloud tools
 brew install \
@@ -48,11 +51,10 @@ brew install \
   terraform \
   awscli \
   azure-cli \
-  google-cloud-sdk \
   homebrew/cask-versions/docker-edge
 
 # install applications
-brew install \
+brew cask install \
   caffeine \
   cyberduck \
   handbrake \
@@ -69,16 +71,42 @@ brew install \
   virtualbox \
   google-chrome \
   google-drive-file-stream \
-  1password \
-  1password-cli \
   slack \
   homebrew/cask-drivers/logitech-options \
-  sequel-pro
+  sequel-pro \
+  google-cloud-sdk
+
+# install drivers
+brew cask install \
+  logitech-options \
+  logitech-unifying \
+  yubico-authenticator \
+  yubico-yubikey-manager \
+  yubico-yubikey-piv-manager \
+  yubico-yubikey-personalization-gui
 
 # install conferencing tools
 brew cask install \
   zoomus \
   amazon-chime
+
+# install fonts
+brew cask install \
+  font-montserrat \
+  font-open-sans \
+  font-open-sans-condensed \
+  font-roboto \
+  font-roboto-condensed \
+  font-roboto-mono \
+  font-source-code-pro \
+  font-source-sans-pro \
+  font-source-serif-pro \
+  font-fontawesome \
+  font-hack-nerd-font \
+  font-roboto-mono-for-powerline \
+  font-source-code-pro-for-powerline \
+  font-droid-sans-mono-for-powerline \
+  font-powerline-symbols
 
 brew update && brew cleanup && brew cleanup && brew prune
 
@@ -117,6 +145,3 @@ chsh -s /usr/local/bin/fish
 # install fish shell themeing
 curl -L https://get.oh-my.fish | fish
 omf install bobthefish
-
-# install fonts
-cp ${SHARED_DIR}/fonts/*.ttf ${HOME_DIR}/Library/Fonts

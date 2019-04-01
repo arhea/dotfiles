@@ -54,8 +54,11 @@ echo "=> Symlink Visual Studio Configuration"
 ln -sf ${SHARED_DIR}/visual-studio-code/settings.json "${HOME_DIR}/Library/Application Support/Code/User/settings.json"
 
 # iterm2
-echo "=> Symlink iTerm2 Configuration"
-ln -sf ${PLATFORM_DIR}/iterm2/com.googlecode.iterm2.plist ${HOME_DIR}/Library/Preferences/com.googlecode.iterm2.plist
+echo "=> Symlink Software Configuration"
+for FILE_NAME in ${PLATFORM_DIR}/software/*.plist; do
+  echo "===> Linking $FILE_NAME to ${HOME_DIR}/Library/Preferences/$(basename ${FILE_NAME})"
+  ln -sf $FILE_NAME ${HOME_DIR}/Library/Preferences/$(basename ${FILE_NAME})
+done
 
 # gpg
 echo "=> Symlink GPG Configuration"
