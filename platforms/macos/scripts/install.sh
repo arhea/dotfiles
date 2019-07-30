@@ -20,7 +20,7 @@ brew tap homebrew/cask-fonts
 
 # install cli tools
 brew install \
-  gnu-sed --default-names \
+  gnu-sed \
   curl \
   bash \
   fish \
