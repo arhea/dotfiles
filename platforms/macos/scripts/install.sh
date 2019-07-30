@@ -29,7 +29,7 @@ brew install \
   openssl \
   terminal-notifier \
   httpie \
-  wget --enable-iri
+  wget
 
 # install lnaguages
 brew install go ruby n python
