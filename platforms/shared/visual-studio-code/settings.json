@@ -1,9 +1,0 @@
-{
-  "editor.fontSize": 13,
-  "editor.fontFamily": "Roboto Mono, Monaco, 'Courier New', monospace",
-  "editor.wordWrap": true,
-  "window.zoomLevel": 0,
-  "extensions.autoUpdate": true,
-  "terraform.format.enable": true,
-  "javascript.updateImportsOnFileMove.enabled": "always"
-}

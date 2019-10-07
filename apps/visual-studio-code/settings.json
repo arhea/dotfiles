@@ -1,0 +1,27 @@
+{
+    "window.zoomLevel": 0,
+
+    // editor configuration
+    "editor.fontSize": 13,
+    "editor.fontFamily": "Roboto Mono, Monaco, 'Courier New', monospace",
+    "editor.wordWrap": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    },
+
+    // extensions
+    "extensions.autoUpdate": true,
+
+    // terraform configuration
+    "terraform.format.enable": true,
+
+    // javascript configuration
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "javascript.format.enable": true,
+    "javascript.referencesCodeLens.enabled": true,
+
+    // integrated terminal
+    "terminal.integrated.shell.osx": "/usr/local/bin/fish",
+    "terminal.integrated.fontFamily": "Roboto Mono, Monaco, 'Courier New', monospace",
+    "terminal.integrated..fontSize": 13
+}

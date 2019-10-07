@@ -1,18 +1,10 @@
 
-bootstrap-macos: install-macos symlink-macos config-macosx
-bootstrap-ubuntu: install-ubuntu symlink-ubuntu
 
-install-macos:
-	cd ./platforms/macos && make install;
+install:
+	bash ./scripts/install.sh
 
-symlink-macos:
-	cd ./platforms/macos && make symlink;
+symlink:
+	bash ./scripts/symlink.sh
 
-config-macos:
-	cd ./platforms/macos && make config;
-
-install-ubuntu:
-	cd ./platforms/ubuntu && make install;
-
-symlink-ubuntu:
-	cd ./platforms/ubuntu && make symlink;
+configure:
+	bash ./scripts/config.sh
