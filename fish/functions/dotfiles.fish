@@ -3,6 +3,12 @@ function dotfiles
 
   if test $subcommand = "update"; or test $subcommand = "upgrade"
     _dotfiles_update
+  else if test $subcommand = "symlink"
+    bash $DOTFILES_HOME/scripts/symlink.sh
+  else if test $subcommand = "config"
+    bash $DOTFILES_HOME/scripts/config.sh
+  else
+    console_error "Subcommand Not Found!"
   end
 
 end

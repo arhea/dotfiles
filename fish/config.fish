@@ -18,6 +18,8 @@ set -g theme_display_k8s_context no
 
 set -gx GPG_TTY (tty)
 
+set -gx DOTFILES_HOME $HOME/code/dotfiles
+
 # set global variables
 set -gx N_PREFIX "$HOME/.n"
 set -gx HOMEBREW_CASK_OPTS "--appdir=/Applications"
