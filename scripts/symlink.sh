@@ -19,6 +19,14 @@ echo "----------------------------------------------"
 echo "=> Symlink Editor Config"
 ln -sf ${DOTFILES_DIR}/.editorconfig ${HOME_DIR}/.editorconfig
 
+# bash configuration
+echo "=> Symlink Bash Configuration"
+ln -sf ${DOTFILES_DIR}/.bashrc ${HOME_DIR}/.bashrc
+
+# ZSH configuration
+echo "=> Symlink ZSH Configuration"
+ln -sf ${DOTFILES_DIR}/.zshrc ${HOME_DIR}/.zshrc
+
 # git config
 echo "=> Symlink Git Configuration"
 ln -sf ${DOTFILES_DIR}/.gitattributes ${HOME_DIR}/.gitattributes
