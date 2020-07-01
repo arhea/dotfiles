@@ -1,38 +1,81 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-HOME_DIR=$HOME
-DOTFILES_DIR=$(pwd)
+HOME_DIR=$1
+PLATFORM_DIR=$(pwd)
+SHARED_DIR=${PLATFORM_DIR}/../shared
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 mkdir -p /usr/local/bin
-mkdir -p /usr/local/sbin
 
 sudo chown -R $USER /usr/local/bin
 sudo chown -R $USER /usr/local/sbin
 
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# install homebrew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 brew update && brew upgrade
 brew tap homebrew/cask-versions
 brew tap homebrew/cask-drivers
 brew tap homebrew/cask-fonts
 
+# configure the shell
+brew install \
+  zsh \
+  bash \
+  zsh-autosuggestions \
+  zsh-syntax-highlighting \
+  starship
+
+sudo echo "/usr/local/bin/bash" >> /etc/shells
+sudo echo "/usr/local/bin/zsh" >> /etc/shells
+sudo chsh -s /usr/local/bin/zsh
+
+# install iterm2
+mkdir -p /usr/local/share/iterm2
+curl -L https://iterm2.com/shell_integration/bash -o /usr/local/share/iterm2/iterm.bash
+curl -L https://iterm2.com/shell_integration/zsh -o /usr/local/share/iterm2/iterm.zsh
+
 # install cli tools
 brew install \
+  gnupg \
   gnu-sed \
+  gnutls \
   curl \
-  bash \
-  fish \
+  wget \
   git \
   gnupg \
   openssl \
   terminal-notifier \
   httpie \
-  wget
+  hey \
+  make \
+  jq
 
-# change to more modern bash
-echo "/usr/local/bin/bash" | sudo tee -a /etc/shells
-chsh -s /usr/local/bin/bash
+# install cloud tools
+brew install \
+  aws-iam-authenticator \
+  kubernetes-cli \
+  helm \
+  cfssl \
+  packer \
+  terraform \
+  awscli \
+  amazon-ecs-cli \
+  aws-sam-cli \
+  hugo \
+  kustomize \
+  opa \
+  trivy \
+  eksctl \
+  fluxctl \
+  istioctl
+
+# create n directory
+sudo mkdir -p /usr/local/n
+sudo chown -R $USER /usr/local/n
 
 # install lnaguages
 brew install go ruby n python
@@ -41,34 +84,23 @@ ln -sf /usr/local/bin/pip3 /usr/local/bin/pip
 
 # install node
 n lts
-npm install -g npm serverless webpack
+npm install -g npm yarn
 
 # install pip
-pip install --upgrade pip six bake-cli
-
-# install cloud tools
-brew install \
-  kubernetes-cli \
-  kubernetes-helm \
-  cfssl \
-  packer \
-  terraform \
-  awscli
+pip install --upgrade pip six bake-cli pipenv git+ssh://git.amazon.com/pkg/BenderLibIsengard
 
 # install applications
 brew cask install \
   caffeine \
-  cyberduck \
   visual-studio-code \
   iterm2 \
   spotify \
   spotify-notifications \
   alfred \
-  virtualbox \
-  google-chrome \
-  slack \
-  homebrew/cask-drivers/logitech-options \
-  sequel-pro
+  amazon-chime \
+  amazon-workdocs \
+  amazon-workspaces \
+  google-chrome
 
 # install drivers
 brew cask install \
@@ -93,7 +125,7 @@ brew cask install \
   font-droid-sans-mono-for-powerline \
   font-powerline-symbols
 
-brew update && brew cleanup && brew cleanup && brew prune
+brew update && brew cleanup && brew cleanup
 
 # install code
 code --install-extension EditorConfig.EditorConfig
@@ -122,13 +154,3 @@ code --install-extension secanis.jenkinsfile-support
 code --install-extension stayfool.vscode-asciidoc
 code --install-extension vscoss.vscode-ansible
 code --install-extension wholroyd.jinja
-
-# install fish
-echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
-
-# install fish shell themeing
-curl -L https://get.oh-my.fish | fish
-omf install bobthefish
-
-# install fish shell iterm2 integration
-curl -L https://iterm2.com/shell_integration/fish -o ~/.config/fish/iterm2.fish

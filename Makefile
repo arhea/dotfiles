@@ -1,10 +1,10 @@
 
-
 install:
-	bash ./scripts/install.sh
+	bash ./scripts/install.bash
+	bash ./scripts/symlink.bash
 
 symlink:
-	bash ./scripts/symlink.sh
+	bash ./scripts/symlink.bash
 
 configure:
-	bash ./scripts/config.sh
+	bash ./scripts/config.bash

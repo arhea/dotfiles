@@ -1,8 +1,11 @@
-#!/usr/local/bin/bash -e
+#!/usr/bin/env bash
+
+set -e
 
 echo "=> Elevate Privileges"
 sudo -v
 
+echo "=> Global Configuration"
 # disable transparency in the menu bar and elsewhere
 sudo defaults write com.apple.universalaccess reduceTransparency -bool true
 
@@ -38,12 +41,10 @@ sudo defaults write NSGlobalDomain KeyRepeat -int 1
 sudo defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 echo "=> Scrolling"
-
 # disable “natural” scrolling
 sudo defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 echo "=> Keyboard Lighting"
-
 # automatically enable keyboard backlight in low light
 sudo defaults write com.apple.BezelServices kDim -bool true
 
@@ -51,12 +52,10 @@ sudo defaults write com.apple.BezelServices kDim -bool true
 sudo defaults write com.apple.BezelServices kDimTime -int 300
 
 echo "=> Volume"
-
 # disable volume change noise
 sudo defaults write "com.apple.sound.beep.feedback" -int 0
 
 echo "=> Finder"
-
 # finder: disable window animations and Get Info animations
 sudo defaults write com.apple.finder DisableAllAnimations -bool true
 
@@ -156,7 +155,6 @@ sudo defaults write com.apple.dock mineffect -string "scale"
 sudo defaults write com.apple.dock show-recents -int 0
 
 echo "=> Text Edit"
-
 # textedit: disable rich text
 sudo defaults write com.apple.dock RichText -int 0
 

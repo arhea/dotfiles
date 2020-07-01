@@ -1,30 +1,23 @@
-#!/bin/zsh -e
+# ~/.zshrc
 
-# set global variables
-export N_PREFIX=$HOME/.n
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-export GOPATH="$HOME/Code/go-workspace"
-export GOROOT=$(brew --prefix go)/libexec
-export GPG_TTY=$(tty)
-export DOTFILES_HOME=$HOME/Code/AlexsDotfiles
+if [ -f $HOME/.bashrc ]; then
+  source $HOME/.bashrc
+fi
 
-# set the default editor to code
-export EDITOR=code
+# bootstrap starship
+eval "$(starship init zsh)"
 
-# add go to the path
-export PATH=$PATH:$GOROOT/bin:$GOPATH
+# configure iterm2 integration
+source /usr/local/share/iterm2/iterm.zsh
 
-# add n to path to manage node instances
-export PATH=$PATH:$HOME/.n/bin
+# configure syntax highlighting
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# add ansible to the path
-export PATH=$PATH:$(brew --prefix ansible)
+# add aliases
+alias msupdate="sudo /Library/Application\ Support/Microsoft/MAU2\.0/Microsoft\ AutoUpdate.app/Contents/MacOS/msupdate"
 
-# add ruby to the path
-export PATH=$PATH:$(brew --prefix ruby)
-
-# add default paths to the path
-export PATH=$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
-
-# add docker to the path
-export PATH=$PATH:/Applications/Docker.app/Contents/Resources/bin
+# initialize autocompletions
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+  autoload -Uz compinit && compinit
+fi

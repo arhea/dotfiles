@@ -1,27 +1,33 @@
 {
-    "window.zoomLevel": 0,
-
-    // editor configuration
-    "editor.fontSize": 13,
-    "editor.fontFamily": "Roboto Mono, Monaco, 'Courier New', monospace",
-    "editor.wordWrap": true,
-    "editor.codeActionsOnSave": {
-        "source.organizeImports": true
-    },
-
-    // extensions
-    "extensions.autoUpdate": true,
-
-    // terraform configuration
-    "terraform.format.enable": true,
-
-    // javascript configuration
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "javascript.format.enable": true,
-    "javascript.referencesCodeLens.enabled": true,
-
-    // integrated terminal
-    "terminal.integrated.shell.osx": "/usr/local/bin/fish",
-    "terminal.integrated.fontFamily": "Roboto Mono, Monaco, 'Courier New', monospace",
-    "terminal.integrated..fontSize": 13
+  "editor.fontSize": 13,
+  "editor.fontFamily": "Roboto Mono, Monaco, 'Courier New', monospace",
+  "editor.wordWrap": true,
+  "window.zoomLevel": 0,
+  "terminal.integrated.shell.osx": "/usr/local/bin/fish",
+  "terminal.integrated.fontFamily": "Roboto Mono, Monaco, 'Courier New', monospace",
+  "terminal.integrated.fontSize": "13",
+  "extensions.autoUpdate": true,
+  "terraform.format.enable": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "workbench.iconTheme": "vscode-icons",
+  "terraform.indexing": {
+    "enabled": false,
+    "liveIndexing": false,
+    "delay": 500,
+    "exclude": [
+      ".terraform/**/*",
+      "**/.terraform/**/*"
+    ]
+  },
+  "terraform.languageServer": {
+    "enabled": true,
+    "args": []
+  },
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "go.formatTool": "goimports",
+  "go.useLanguageServer": true,
+  "python.jediEnabled": false,
+  "aws.samcli.location": "/usr/local/bin/sam"
 }
