@@ -1,4 +1,7 @@
 # ~/.config/starship.toml
 
-[kubernetes]
-disabled = true
+[directory]
+style = "bold white"
+
+[aws]
+style = "bold yellow"

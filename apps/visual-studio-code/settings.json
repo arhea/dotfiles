@@ -1,9 +1,10 @@
 {
   "editor.fontSize": 13,
-  "editor.fontFamily": "Roboto Mono, Monaco, 'Courier New', monospace",
-  "editor.wordWrap": true,
+  "editor.fontFamily": "RobotoMono Nerd Font Monospace, Monaco, 'Courier New', monospace",
+  "editor.wordWrap": "off",
   "window.zoomLevel": 0,
-  "terminal.integrated.shell.osx": "/usr/local/bin/fish",
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
   "terminal.integrated.fontFamily": "Roboto Mono, Monaco, 'Courier New', monospace",
   "terminal.integrated.fontSize": "13",
   "extensions.autoUpdate": true,
@@ -20,8 +21,10 @@
     ]
   },
   "terraform.languageServer": {
-    "enabled": true,
-    "args": []
+    "external": true,
+    "args": [
+      "serve"
+    ]
   },
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
@@ -29,5 +32,6 @@
   "go.formatTool": "goimports",
   "go.useLanguageServer": true,
   "python.jediEnabled": false,
-  "aws.samcli.location": "/usr/local/bin/sam"
+"aws.samcli.location": "/usr/local/bin/sam",
+"python.languageServer": "Microsoft"
 }

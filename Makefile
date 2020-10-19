@@ -8,3 +8,6 @@ symlink:
 
 configure:
 	bash ./scripts/config.bash
+
+awscli:
+	bash ./scripts/awscli.bash
