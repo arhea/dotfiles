@@ -33,5 +33,10 @@
   "go.useLanguageServer": true,
   "python.jediEnabled": false,
 "aws.samcli.location": "/usr/local/bin/sam",
-"python.languageServer": "Microsoft"
+"python.languageServer": "Microsoft",
+"editor.formatOnSave": true,
+"editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.fixAll.eslint": false
+}
 }

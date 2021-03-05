@@ -15,7 +15,7 @@ echo "----------------------------------------------"
 
 # dotfiles
 echo "=> Symlink dotfiles cli utility"
-ln -sf ${DOTFILES_DIR}/utilities/dotfiles.bash /usr/local/bin/dotfiles
+ln -sf ${DOTFILES_DIR}/utilities/dotfiles.zsh /usr/local/bin/dotfiles
 
 # editorconfig
 echo "=> Symlink Editor Config"

@@ -21,9 +21,6 @@ function fn_edit() {
 
 function fn_upgrade() {
 
-  print_text "${text_green}${text_bold}=> Enabling SSH Kerberos"
-  sudo jamf policy -event kerberos-ssh
-
   print_text "${text_green}${text_bold}=> Checking For MacOS Updates"
   softwareupdate -ir
 
@@ -40,10 +37,6 @@ function fn_upgrade() {
 
   print_text "${text_green}${text_bold}=> Upgrading Node.js"
   n lts && npm install -g npm
-
-  print_text "${text_green}${text_bold}=> Upgrading AWS CDK"
-  npm install -g aws-cdk
-
 }
 
 function fn_ssh() {

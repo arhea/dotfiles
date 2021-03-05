@@ -1,7 +1,7 @@
 [user]
 	name = Alex Rhea
 	email = alex.rhea@gmail.com
-	signingkey = DED3213137663B92
+	signingkey = 97A90ABEDE246D5C
 
 [core]
 	excludesfile = ~/.gitignore

@@ -14,7 +14,7 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # install homebrew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 brew update && brew upgrade
 brew tap homebrew/cask-versions
@@ -56,28 +56,22 @@ brew install \
 
 # install cloud tools
 brew install \
-  aws-iam-authenticator \
   kubernetes-cli \
   helm \
   cfssl \
   packer \
   terraform \
   awscli \
-  amazon-ecs-cli \
-  aws-sam-cli \
   hugo \
   kustomize \
   opa \
-  trivy \
-  eksctl \
-  fluxctl \
-  istioctl
+  trivy
 
 # create n directory
 sudo mkdir -p /usr/local/n
 sudo chown -R $USER /usr/local/n
 
-# install lnaguages
+# install languages
 brew install go ruby n python
 ln -sf /usr/local/bin/python3 /usr/local/bin/python
 ln -sf /usr/local/bin/pip3 /usr/local/bin/pip
@@ -87,28 +81,29 @@ n lts
 npm install -g npm yarn
 
 # install pip
-pip install --upgrade pip six bake-cli pipenv git+ssh://git.amazon.com/pkg/BenderLibIsengard
+pip install --upgrade pip six bake-cli pipenv
+
+# install cloud cli
+brew install --cask  \
+  google-cloud-sdk
 
 # install applications
-brew cask install \
+brew -install --cask  \
   caffeine \
   visual-studio-code \
   iterm2 \
   spotify \
   spotify-notifications \
   alfred \
-  amazon-chime \
-  amazon-workdocs \
-  amazon-workspaces \
   google-chrome
 
 # install drivers
-brew cask install \
+brew install --cask  \
   logitech-options \
   logitech-unifying
 
 # install fonts
-brew cask install \
+brew install --cask  \
   font-montserrat \
   font-open-sans \
   font-open-sans-condensed \
