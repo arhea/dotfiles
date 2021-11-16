@@ -2,7 +2,6 @@
   "editor.fontSize": 13,
   "editor.fontFamily": "RobotoMono Nerd Font Monospace, Monaco, 'Courier New', monospace",
   "editor.wordWrap": "off",
-  "window.zoomLevel": 0,
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
   "terminal.integrated.fontFamily": "Roboto Mono, Monaco, 'Courier New', monospace",
@@ -38,5 +37,14 @@
 "editor.codeActionsOnSave": {
     "source.fixAll": true,
     "source.fixAll.eslint": false
-}
+},
+"[scss]": {
+  "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
+},
+"[php]": {
+  "editor.defaultFormatter": "junstyle.php-cs-fixer"
+},
+"php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
+"php-cs-fixer.lastDownload": 1626282813388,
+"go.toolsManagement.autoUpdate": true
 }

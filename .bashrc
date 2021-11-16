@@ -24,16 +24,17 @@ export N_PREFIX="${HOME}/.n"
 export PATH="${HOME}/.n/bin:${PATH}"
 
 # add ansible to the path
-export PATH="${BREW_PREIX}/opt/bin:${PATH}"
+export PATH="${BREW_PREIX}/opt/ansible/bin:${PATH}"
 
 # add ruby to the path
-export PATH="${BREW_PREIX}/opt/bin:${PATH}"
+export PATH="${BREW_PREIX}/opt/ruby/bin:${PATH}"
+export PATH="${BREW_PREIX}/lib/ruby/gems/3.0.0/bin:${PATH}"
 
 # add curl to the path
-export PATH="${BREW_PREIX}/opt/bin:${PATH}"
+export PATH="${BREW_PREIX}/opt/curl/bin:${PATH}"
 
 # add openssl to the path
-export PATH="${BREW_PREIX}/opt/bin:${PATH}"
+export PATH="${BREW_PREIX}/opt/openssl/bin:${PATH}"
 
 # add docker to the path
 export PATH="/Applications/Docker.app/Contents/Resources/bin:${PATH}"

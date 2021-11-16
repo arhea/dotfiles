@@ -4,4 +4,4 @@
 style = "bold white"
 
 [aws]
-style = "bold yellow"
+disabled = true

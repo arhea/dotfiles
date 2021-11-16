@@ -58,14 +58,11 @@ brew install \
 brew install \
   kubernetes-cli \
   helm \
-  cfssl \
   packer \
   terraform \
   awscli \
   hugo \
-  kustomize \
-  opa \
-  trivy
+  kustomize
 
 # create n directory
 sudo mkdir -p /usr/local/n
@@ -84,8 +81,7 @@ npm install -g npm yarn
 pip install --upgrade pip six bake-cli pipenv
 
 # install cloud cli
-brew install --cask  \
-  google-cloud-sdk
+brew install --cask google-cloud-sdk
 
 # install applications
 brew -install --cask  \
@@ -94,13 +90,10 @@ brew -install --cask  \
   iterm2 \
   spotify \
   spotify-notifications \
-  alfred \
-  google-chrome
+  alfred
 
 # install drivers
-brew install --cask  \
-  logitech-options \
-  logitech-unifying
+brew install --cask logitech-options logitech-unifying
 
 # install fonts
 brew install --cask  \
@@ -121,31 +114,3 @@ brew install --cask  \
   font-powerline-symbols
 
 brew update && brew cleanup && brew cleanup
-
-# install code
-code --install-extension EditorConfig.EditorConfig
-code --install-extension TeddyDD.fish
-code --install-extension TwentyChung.jsx
-code --install-extension annsk.alignment
-code --install-extension austin.code-gnu-global
-code --install-extension bungcip.better-toml
-code --install-extension coolbear.systemd-unit-file
-code --install-extension dbaeumer.vscode-eslint
-code --install-extension felixfbecker.php-intellisense
-code --install-extension formulahendry.auto-close-tag
-code --install-extension GitHub.vscode-pull-request-github
-code --install-extension HookyQR.beautify
-code --install-extension mauve.terraform
-code --install-extension mrmlnc.vscode-apache
-code --install-extension ms-python.python
-code --install-extension ms-vscode.azure-account
-code --install-extension ms-vscode.cpptools
-code --install-extension ms-vscode.csharp
-code --install-extension ms-vscode.Go
-code --install-extension ms-vscode.PowerShell
-code --install-extension PeterJausovec.vscode-docker
-code --install-extension robinbentley.sass-indented
-code --install-extension secanis.jenkinsfile-support
-code --install-extension stayfool.vscode-asciidoc
-code --install-extension vscoss.vscode-ansible
-code --install-extension wholroyd.jinja
