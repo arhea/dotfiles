@@ -10,11 +10,13 @@ mkdir -p /usr/local/bin
 sudo chown -R $USER /usr/local/bin
 sudo chown -R $USER /usr/local/sbin
 
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+export PATH=/opt/homebrew/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+sudo chown -R $USER:admin /opt/homebrew
 
 brew update && brew upgrade
 brew tap homebrew/cask-versions
@@ -29,9 +31,9 @@ brew install \
   zsh-syntax-highlighting \
   starship
 
-sudo echo "/usr/local/bin/bash" >> /etc/shells
-sudo echo "/usr/local/bin/zsh" >> /etc/shells
-sudo chsh -s /usr/local/bin/zsh
+sudo sh -c "echo $(which bash) >> /etc/shells"
+sudo sh -c "echo $(which zsh) >> /etc/shells"
+sudo chsh -s $(which zsh)
 
 # install iterm2
 mkdir -p /usr/local/share/iterm2
@@ -46,6 +48,7 @@ brew install \
   curl \
   wget \
   git \
+  svn \
   gnupg \
   openssl \
   terminal-notifier \
@@ -78,13 +81,13 @@ n lts
 npm install -g npm yarn
 
 # install pip
-pip install --upgrade pip six bake-cli pipenv
+pip3 install --upgrade pip six bake-cli pipenv
 
 # install cloud cli
 brew install --cask google-cloud-sdk
 
 # install applications
-brew -install --cask  \
+brew install --cask  \
   caffeine \
   visual-studio-code \
   iterm2 \
@@ -96,12 +99,11 @@ brew -install --cask  \
 brew install --cask logitech-options logitech-unifying
 
 # install fonts
-brew install --cask  \
+brew install \
   font-montserrat \
   font-open-sans \
   font-open-sans-condensed \
   font-roboto \
-  font-roboto-condensed \
   font-roboto-mono \
   font-source-code-pro \
   font-source-sans-pro \

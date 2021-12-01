@@ -9,7 +9,7 @@
   "extensions.autoUpdate": true,
   "terraform.format.enable": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "workbench.iconTheme": "vscode-icons",
+  "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
   "terraform.indexing": {
     "enabled": false,
     "liveIndexing": false,
@@ -46,5 +46,6 @@
 },
 "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
 "php-cs-fixer.lastDownload": 1626282813388,
-"go.toolsManagement.autoUpdate": true
+"go.toolsManagement.autoUpdate": true,
+"workbench.colorTheme": "GitHub Dark"
 }

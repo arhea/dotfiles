@@ -6,12 +6,6 @@ echo "=> Elevate Privileges"
 sudo -v
 
 echo "=> Global Configuration"
-# disable transparency in the menu bar and elsewhere
-sudo defaults write com.apple.universalaccess reduceTransparency -bool true
-
-# increase window resize speed for Cocoa applications
-sudo defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
-
 # expand save panel by default
 sudo defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 sudo defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
@@ -22,12 +16,6 @@ sudo defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
 
 # automatically quit printer app once the print jobs complete
 sudo defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
-
-# disable Resume system-wide
-sudo defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false
-
-# disable automatic termination of inactive apps
-sudo defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true
 
 # disable smart quotes as they’re annoying when typing code
 sudo defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
@@ -44,21 +32,7 @@ echo "=> Scrolling"
 # disable “natural” scrolling
 sudo defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
-echo "=> Keyboard Lighting"
-# automatically enable keyboard backlight in low light
-sudo defaults write com.apple.BezelServices kDim -bool true
-
-# turn off keyboard illumination when computer is not used for 5 minutes
-sudo defaults write com.apple.BezelServices kDimTime -int 300
-
-echo "=> Volume"
-# disable volume change noise
-sudo defaults write "com.apple.sound.beep.feedback" -int 0
-
 echo "=> Finder"
-# finder: disable window animations and Get Info animations
-sudo defaults write com.apple.finder DisableAllAnimations -bool true
-
 # finder: show hidden files by default
 sudo defaults write com.apple.finder AppleShowAllFiles -bool true
 
@@ -80,12 +54,6 @@ sudo defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 # Disable the warning when changing a file extension
 sudo defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
-# Enable spring loading for directories
-sudo defaults write NSGlobalDomain com.apple.springing.enabled -bool true
-
-# Remove the spring loading delay for directories
-sudo defaults write NSGlobalDomain com.apple.springing.delay -float 0
-
 # avoid creating .DS_Store files on network volumes
 sudo defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
@@ -104,7 +72,6 @@ echo "=> Dashboard"
 sudo defaults write com.apple.dashboard mcx-disabled -bool true
 
 echo "=> Dock"
-
 # don’t show Dashboard as a Space
 sudo defaults write com.apple.dock dashboard-in-overlay -bool true
 

@@ -1,25 +1,24 @@
 [user]
 	name = Alex Rhea
-	email = alex@takt.io
-	signingkey = 9B8D4E192EFB68AB
+	email = alex.rhea@gmail.com
+	signingkey = 49AC8A27507192E9
 
 [core]
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
-	editor = code --wait
+	editor = code --new-window --wait
 
 [merge]
-  tool = vscode
-	log = true
+	tool = vscode
 
 [mergetool "vscode"]
-   cmd = code --wait $MERGED
+   cmd = code --new-window --wait $MERGED
 
 [diff]
   tool = vscode
 
 [difftool "vscode"]
-  cmd = code --wait --diff $LOCAL $REMOTE
+  cmd = code --new-window --wait --diff $LOCAL $REMOTE
 
 [help]
 	autocorrect = 1
@@ -34,7 +33,7 @@
 	process = git-lfs filter-process
 
 [gpg]
-  program = /usr/local/bin/gpg
+  program = /opt/homebrew/bin/gpg
 
 [commit]
 	gpgsign = true
@@ -56,5 +55,6 @@
 
 [url "ssh://git@bitbucket.org/"]
 	insteadOf = "https://bitbucket.org/"
+
 [init]
 	defaultBranch = main
