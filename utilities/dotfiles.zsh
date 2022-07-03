@@ -20,7 +20,6 @@ function fn_edit() {
 }
 
 function fn_upgrade() {
-
   print_text "${text_green}${text_bold}=> Checking For MacOS Updates"
   softwareupdate -ir
 
@@ -34,24 +33,9 @@ function fn_upgrade() {
   mkdir -p /usr/local/share/iterm2
   curl -Ls https://iterm2.com/shell_integration/bash -o /usr/local/share/iterm2/iterm.bash
   curl -Ls https://iterm2.com/shell_integration/zsh -o /usr/local/share/iterm2/iterm.zsh
-
-  print_text "${text_green}${text_bold}=> Upgrading Node.js"
-  n lts && npm install -g npm
-}
-
-function fn_ssh() {
-
-  AWS_REGION=$1
-
-  if [ -f "$SSH_FILE" ]; then
-    print_text "${text_green}${text_bold}=> Adding $SSH_FILE to SSH Agent"
-    ssh-add $SSH_FILE
-  fi
-
 }
 
 function fn_clone() {
-
   FOLDER_NAME=$HOME/code/$1
   GIT_URL=$2
 
@@ -78,10 +62,6 @@ while [ "$1" != "" ]; do
       ;;
     upgrade | update)
       fn_upgrade $@
-      exit
-      ;;
-    ssh)
-      fn_ssh $@
       exit
       ;;
     git-clone)

@@ -10,6 +10,7 @@
 
 [merge]
 	tool = vscode
+	squash = true
 
 [mergetool "vscode"]
    cmd = code --new-window --wait $MERGED

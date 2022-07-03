@@ -5,3 +5,6 @@ style = "bold white"
 
 [aws]
 disabled = true
+
+[kubernetes]
+disabled = false

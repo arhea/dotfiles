@@ -15,6 +15,10 @@ export EDITOR="code -w"
 export N_PREFIX="${HOME}/.n"
 export PATH="${HOME}/.n/bin:${PATH}"
 
+# add java
+export JAVA_HOME="/opt/homebrew/opt/openjdk"
+export PATH="/opt/homebrew/opt/openjdk/bin:${PATH}"
+
 # add ansible to the path
 export PATH="/opt/homebrew/opt/ansible/bin:${PATH}"
 
@@ -30,5 +34,23 @@ export PATH="/opt/homebrew/opt/openssl/bin:${PATH}"
 # add docker to the path
 export PATH="/Applications/Docker.app/Contents/Resources/bin:${PATH}"
 
+# add rust to the path
+export PATH="$HOME/.cargo/bin:${PATH}"
+
 # add google cloud sdk to the path
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 export PATH="/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:${PATH}"
+
+# add go
+export GOROOT="/opt/homebrew/opt/go/libexec"
+export GOPATH="${HOME}/Code/go"
+export GOPRIVATE="github.com/takt-corp/*"
+export PATH="${GOPATH}/bin:${GOROOT}/bin:${PATH}"
+
+# add aliases
+alias k="kubectl"
+alias b="brew"
+
+# configuration cargo
+source "$HOME/.cargo/env"
+
