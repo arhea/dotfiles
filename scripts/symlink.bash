@@ -28,6 +28,9 @@ ln -sf ${DOTFILES_DIR}/.gitconfig ${HOME_DIR}/.gitconfig
 ln -sf ${DOTFILES_DIR}/.gitignore ${HOME_DIR}/.gitignore
 ln -sf ${DOTFILES_DIR}/.gitmodules ${HOME_DIR}/.gitmodules
 
+# profile configuration
+ln -sf ${DOTFILES_DIR}/.profile ${HOME_DIR}/.profile
+
 # bash configuration
 echo "=> Symlink Bash Configuration"
 ln -sf ${DOTFILES_DIR}/.bashrc ${HOME_DIR}/.bashrc
@@ -36,6 +39,7 @@ ln -sf ${DOTFILES_DIR}/.bash_profile ${HOME_DIR}/.bash_profile
 # ZSH configuration
 echo "=> Symlink ZSH Configuration"
 ln -sf ${DOTFILES_DIR}/.zshrc ${HOME_DIR}/.zshrc
+ln -sf ${DOTFILES_DIR}/.zshenv ${HOME_DIR}/.zshenv
 
 # starship configuration
 echo "=> Symlink Starship Configuration"

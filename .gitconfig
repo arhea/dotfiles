@@ -1,7 +1,16 @@
 [user]
 	name = Alex Rhea
 	email = alex.rhea@gmail.com
-	signingkey = 49AC8A27507192E9
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBzIv8zJb0LRrZ4J6cjnqZ9PHLSspktNeDj/6z55Nf91
+
+[commit]
+  	gpgsign = true
+
+[gpg]
+  	format = ssh
+
+[gpg "ssh"]
+  	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 
 [core]
 	excludesfile = ~/.gitignore
@@ -10,7 +19,6 @@
 
 [merge]
 	tool = vscode
-	squash = true
 
 [mergetool "vscode"]
    cmd = code --new-window --wait $MERGED
@@ -33,12 +41,6 @@
 	required = true
 	process = git-lfs filter-process
 
-[gpg]
-  program = /opt/homebrew/bin/gpg
-
-[commit]
-	gpgsign = true
-
 [github]
 	user = arhea
 
@@ -59,3 +61,6 @@
 
 [init]
 	defaultBranch = main
+
+[fetch]
+	prune = true

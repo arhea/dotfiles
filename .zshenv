@@ -1,10 +1,10 @@
-# ~/.bashrc
+# ~/.zshenv
 
 export FLUTTER_GIT_URL="https://github.com/flutter/flutter.git"
 export ANDROID_HOME="${HOME}/Library/Android/sdk"
 
 # add default paths to the path
-export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:${PATH}"
 
 # set global variables
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
@@ -47,7 +47,3 @@ export PATH="${GOPATH}/bin:${GOROOT}/bin:${PATH}"
 # add aliases
 alias k="kubectl"
 alias b="brew"
-
-# configuration cargo
-source "$HOME/.cargo/env"
-

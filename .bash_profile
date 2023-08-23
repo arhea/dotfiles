@@ -20,5 +20,5 @@ fi
 # bootstrap starship
 eval "$(starship init bash)"
 
-# configure iterm2 integration
-source /usr/local/share/iterm2/iterm.bash
+# configure bash completions for google cloud
+source "$(brew --prefix)/share/google-cloud-sdk/path.bash.inc"

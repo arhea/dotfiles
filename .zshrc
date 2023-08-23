@@ -1,27 +1,26 @@
 # ~/.zshrc
 
-if [ -f ${HOME}/.bashrc ]; then
-  source ${HOME}/.bashrc
+source ~/.zshenv
+source "$HOME/.cargo/env"
+
+# aliases
+alias k="kubectl"
+alias h="helm"
+alias tf="terraform"
+alias b="brew"
+
+# load homebrew completions
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
 fi
 
-# configure iterm2 integration
-source /usr/local/share/iterm2/iterm.zsh
+# load google cloud completions
+source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 
-# configure syntax highlighting
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-typeset -A ZSH_HIGHLIGHT_STYLES
-ZSH_HIGHLIGHT_STYLES[command]='fg=blue,bold'
-
-# configure auto suggestions
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# initialize auto completions
-export FPATH=/opt/homebrew/share/zsh/site-functions:/opt/homebrew/share/zsh-completions:${FPATH}
-autoload -Uz compinit && compinit -i
-
-# configure google cloud sdk
-source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
-
-# bootstrap starship
+# load starship
 eval "$(starship init zsh)"
