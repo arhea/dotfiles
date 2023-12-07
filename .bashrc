@@ -47,6 +47,11 @@ export PATH="${GOPATH}/bin:${GOROOT}/bin:${PATH}"
 # add aliases
 alias k="kubectl"
 alias b="brew"
+alias make="gmake"
+alias sed="gsed"
+alias time="gtime"
+alias tar="gtar"
+alias which="gwhich"
 
 # configuration cargo
 source "$HOME/.cargo/env"

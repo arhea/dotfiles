@@ -35,11 +35,6 @@ sudo sh -c "echo $(which bash) >> /etc/shells"
 sudo sh -c "echo $(which zsh) >> /etc/shells"
 sudo chsh -s $(which zsh)
 
-# install iterm2
-mkdir -p /usr/local/share/iterm2
-curl -L https://iterm2.com/shell_integration/bash -o /usr/local/share/iterm2/iterm.bash
-curl -L https://iterm2.com/shell_integration/zsh -o /usr/local/share/iterm2/iterm.zsh
-
 # install cli tools
 brew install \
   gnupg \
@@ -81,22 +76,10 @@ n lts
 npm install -g npm yarn
 
 # install pip
-pip3 install --upgrade pip six bake-cli pipenv
+pip3 install --upgrade pip six pipenv
 
 # install cloud cli
 brew install --cask google-cloud-sdk
-
-# install applications
-brew install --cask  \
-  caffeine \
-  visual-studio-code \
-  iterm2 \
-  spotify \
-  spotify-notifications \
-  alfred
-
-# install drivers
-brew install --cask logitech-options logitech-unifying
 
 # install fonts
 brew install \

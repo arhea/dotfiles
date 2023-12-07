@@ -1,14 +1,14 @@
 {
     "workbench.colorTheme": "GitHub Dark",
     "editor.fontSize": 13,
-    "editor.fontFamily": "UbutnuMono Nerd Font Mono",
+    "editor.fontFamily": "Space Mono Nerd Font",
     "editor.wordWrap": "off",
     "editor.inlineSuggest.enabled": true,
     "editor.accessibilitySupport": "off",
     "editor.formatOnSave": false,
     "editor.formatOnPaste": false,
     "editor.formatOnType": false,
-    "editor.codeActionsOnSave": {},
+    "editor.codeActionsOnSave": { },
     "editor.suggestSelection": "first",
     "security.workspace.trust.untrustedFiles": "open",
     "terminal.external.osxExec": "Warp.app",
@@ -65,35 +65,35 @@
     // markdown formatting options
     "[markdown]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll"]
+        "editor.codeActionsOnSave": [ "source.formatDocument", "source.fixAll" ]
     },
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll"]
+        "editor.codeActionsOnSave": [ "source.formatDocument", "source.fixAll" ]
     },
     // json formatting options
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll"]
+        "editor.codeActionsOnSave": [ "source.formatDocument", "source.fixAll" ]
     },
     "[jsonc]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll"]
+        "editor.codeActionsOnSave": [ "source.formatDocument", "source.fixAll" ]
     },
     // yaml formatting options
     "[yaml]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll"]
+        "editor.codeActionsOnSave": [ "source.formatDocument", "source.fixAll" ]
     },
     // css formatting options
     "[css]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll"]
+        "editor.codeActionsOnSave": [ "source.formatDocument", "source.fixAll" ]
     },
     // scss formatting options
     "[scss]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll"]
+        "editor.codeActionsOnSave": [ "source.formatDocument", "source.fixAll" ]
     },
     // we want to support make files as well
     "[makefile]": {
@@ -114,13 +114,16 @@
     "go.formatTool": "goimports",
     "go.lintTool": "golangci-lint",
     "go.lintOnSave": "workspace",
-    "go.lintFlags": ["--fast"],
+    "go.lintFlags": [ "--fast" ],
     // javascript settings
     "javascript.updateImportsOnFileMove.enabled": "always",
     // redhat yaml
     "redhat.telemetry.enabled": false,
     // error lens
-    "errorLens.enabledDiagnosticLevels": ["warning", "info", "error"],
+    "errorLens.enabledDiagnosticLevels": [ "warning", "info", "error" ],
     // terraform
-    "terraform.languageServer.enable": true
+    "terraform.languageServer.enable": true,
+    "go.gopath": "",
+    "makefile.makePath": "gmake",
+    "go.testExplorer.showDynamicSubtestsInEditor": true
 }
