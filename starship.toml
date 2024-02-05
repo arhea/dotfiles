@@ -1,5 +1,9 @@
 # Get editor completions based on the config schema
-'$schema' = 'https://starship.rs/config-schema.json'
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+scan_timeout = 100
+command_timeout = 1000
 
 format = '''
 $username\
@@ -81,18 +85,7 @@ $crystal\
 $custom\
 $sudo\
 $cmd_duration\
-$line_break\
-$jobs\
-$battery\
-$time\
-$status\
-$os\
-$container\
-$shell\
-$character'''
-
-scan_timeout = 100
-command_timeout = 1000
+$line_break$jobs$battery$time$status$os$container$shell$character'''
 
 [line_break]
 disabled = true
