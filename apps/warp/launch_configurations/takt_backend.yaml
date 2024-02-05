@@ -1,0 +1,96 @@
+---
+name: Takt Backend Services
+windows:
+  - tabs:
+      - title: Audit Service
+        layout:
+          cwd: /Users/arhea/code/go/github.com/takt-corp/audit-service
+
+      - title: Backup Service
+        layout:
+          cwd: /Users/arhea/code/go/github.com/takt-corp/backup-service
+
+      - title: Billing Service
+        layout:
+          cwd: /Users/arhea/code/go/github.com/takt-corp/billing-service
+
+      - title: Config Service
+        layout:
+          cwd: /Users/arhea/code/go/github.com/takt-corp/config-service
+
+      - title: Feed Service
+        layout:
+          cwd: /Users/arhea/code/go/github.com/takt-corp/feed-service
+
+      - title: Identity Service
+        layout:
+          cwd: /Users/arhea/code/go/github.com/takt-corp/identity-service
+
+      - title: Observation Service
+        layout:
+          cwd: /Users/arhea/code/go/github.com/takt-corp/observation-service
+
+      - title: Migration Service
+        layout:
+          cwd: /Users/arhea/code/go/github.com/takt-corp/migration-service
+
+      - title: Personalization Service
+        layout:
+          cwd: /Users/arhea/code/go/github.com/takt-corp/personalization-service
+
+      - title: Report Service
+        layout:
+          cwd: /Users/arhea/code/go/github.com/takt-corp/report-service
+
+      - title: Standard Service
+        layout:
+          cwd: /Users/arhea/code/go/github.com/takt-corp/standard-service
+
+  - tabs:
+      - title: taktauth
+        layout:
+          cwd: /Users/arhea/code/go/github.com/takt-corp/taktauth
+
+      - title: taktlogger
+        layout:
+          cwd: /Users/arhea/code/go/github.com/takt-corp/taktlogger
+
+      - title: taktqueue
+        layout:
+          cwd: /Users/arhea/code/go/github.com/takt-corp/taktqueue
+
+      - title: taktvalidator
+        layout:
+          cwd: /Users/arhea/code/go/github.com/takt-corp/taktvalidator
+
+      - title: taktdb
+        layout:
+          cwd: /Users/arhea/code/go/github.com/takt-corp/taktdb
+
+      - title: taktfs
+        layout:
+          cwd: /Users/arhea/code/go/github.com/takt-corp/taktfs
+
+      - title: taktaudit
+        layout:
+          cwd: /Users/arhea/code/go/github.com/takt-corp/taktaudit
+
+      - title: taktassign
+        layout:
+          cwd: /Users/arhea/code/go/github.com/takt-corp/taktassign
+
+      - title: taktrules
+        layout:
+          cwd: /Users/arhea/code/go/github.com/takt-corp/taktrules
+
+      - title: taktmail
+        layout:
+          cwd: /Users/arhea/code/go/github.com/takt-corp/taktmail
+
+      - title: taktkiosk
+        layout:
+          cwd: /Users/arhea/code/go/github.com/takt-corp/taktkiosk
+
+      - title: taktimporter
+        layout:
+          cwd: /Users/arhea/code/go/github.com/takt-corp/taktimporter

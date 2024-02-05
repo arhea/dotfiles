@@ -1,7 +1,10 @@
 {
-    "workbench.colorTheme": "GitHub Dark",
-    "editor.fontSize": 13,
-    "editor.fontFamily": "Space Mono Nerd Font",
+    "workbench.colorTheme": "GitHub Dark Dimmed",
+    "workbench.iconTheme": "eq-material-theme-icons-darker",
+    "editor.fontSize": 14,
+    "editor.fontFamily": "SpaceMono Nerd Font Mono",
+    "editor.lineHeight": 1.9,
+    "editor.codeLensFontFamily": "SpaceMono Nerd Font Mono",
     "editor.wordWrap": "off",
     "editor.inlineSuggest.enabled": true,
     "editor.accessibilitySupport": "off",
@@ -10,12 +13,16 @@
     "editor.formatOnType": false,
     "editor.codeActionsOnSave": { },
     "editor.suggestSelection": "first",
+
+    "testExplorer.useNativeTesting": true,
+
     "security.workspace.trust.untrustedFiles": "open",
+
+    // terminal settings
     "terminal.external.osxExec": "Warp.app",
-    "terminal.integrated.fontFamily": "RobotoMono Nerd Font Mono",
-    "terminal.integrated.fontSize": 13,
-    "json.schemaDownload.enable": true,
-    "json.format.keepLines": true,
+    "terminal.integrated.fontFamily": "SpaceMono Nerd Font Mono",
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.lineHeight": 1.9,
     "terminal.integrated.profiles.osx": {
         "zsh": {
             "path": "/opt/homebrew/bin/zsh"
@@ -24,7 +31,16 @@
             "path": "/opt/homebrew/bin/bash"
         }
     },
+
+    // extensions settings
     "extensions.autoUpdate": true,
+    "extensions.autoCheckUpdates": true,
+
+    // json settings
+    "json.schemaDownload.enable": true,
+    "json.format.keepLines": true,
+    "json.format.enable": true,
+    "json.validate.enable": true,
 
     // prettier configuration
     "prettier.enable": true,
@@ -39,6 +55,7 @@
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "EditorConfig.EditorConfig"
     },
+
     // typescript specific settings
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -48,6 +65,7 @@
             "source.fixAll.eslint"
         ]
     },
+
     // typescript specific settings
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -57,54 +75,70 @@
             "source.fixAll.eslint"
         ]
     },
+
     // terraform formatting options
     "[terraform]": {
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "hashicorp.terraform"
     },
+
     // markdown formatting options
     "[markdown]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.codeActionsOnSave": [ "source.formatDocument", "source.fixAll" ]
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "vscode.markdown-language-features",
+        "editor.wrappingStrategy": "simple",
+        "editor.wordWrap": "bounded",
+        "editor.wordWrapColumn": 120
     },
-    "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.codeActionsOnSave": [ "source.formatDocument", "source.fixAll" ]
-    },
+
     // json formatting options
     "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.codeActionsOnSave": [ "source.formatDocument", "source.fixAll" ]
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "vscode.json-language-features",
+        "editor.wrappingStrategy": "simple",
+        "editor.wordWrap": "bounded",
+        "editor.wordWrapColumn": 120
     },
+
     "[jsonc]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.codeActionsOnSave": [ "source.formatDocument", "source.fixAll" ]
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "vscode.json-language-features",
+        "editor.wrappingStrategy": "simple",
+        "editor.wordWrap": "bounded",
+        "editor.wordWrapColumn": 120
     },
+
     // yaml formatting options
     "[yaml]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.codeActionsOnSave": [ "source.formatDocument", "source.fixAll" ]
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "redhat.vscode-yaml",
+        "editor.wrappingStrategy": "simple",
+        "editor.wordWrap": "bounded",
+        "editor.wordWrapColumn": 120
     },
+
     // css formatting options
     "[css]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.codeActionsOnSave": [ "source.formatDocument", "source.fixAll" ]
     },
+
     // scss formatting options
     "[scss]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.codeActionsOnSave": [ "source.formatDocument", "source.fixAll" ]
     },
-    // we want to support make files as well
-    "[makefile]": {
-        "editor.formatOnSave": true,
-        "editor.defaultFormatter": "ms-vscode.makefile-tools"
-    },
+
     // go specific settings
     "[go]": {
         "editor.formatOnSave": true,
-        "editor.defaultFormatter": "golang.go"
+        "editor.defaultFormatter": "golang.go",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit",
+            "source.fixAll": "explicit"
+        }
     },
+
     "go.useLanguageServer": true,
     "gopls": {
         "ui.semanticTokens": true,
@@ -115,15 +149,16 @@
     "go.lintTool": "golangci-lint",
     "go.lintOnSave": "workspace",
     "go.lintFlags": [ "--fast" ],
+
     // javascript settings
     "javascript.updateImportsOnFileMove.enabled": "always",
+
     // redhat yaml
     "redhat.telemetry.enabled": false,
+
     // error lens
     "errorLens.enabledDiagnosticLevels": [ "warning", "info", "error" ],
+
     // terraform
     "terraform.languageServer.enable": true,
-    "go.gopath": "",
-    "makefile.makePath": "gmake",
-    "go.testExplorer.showDynamicSubtestsInEditor": true
 }

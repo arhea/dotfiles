@@ -1,17 +1,25 @@
-format = """
+# Get editor completions based on the config schema
+'$schema' = 'https://starship.rs/config-schema.json'
+
+format = '''
 $username\
 $hostname\
 $localip\
 $shlvl\
-$singularity\
 $directory\
-$vcsh\
 $git_branch\
 $git_commit\
 $git_state\
 $git_metrics\
 $git_status\
 $hg_branch\
+$singularity\
+$kubernetes\
+$vcsh\
+$fossil_branch\
+$fossil_metrics\
+$hg_branch\
+$pijul_channel\
 $docker_context\
 $package\
 $c\
@@ -24,16 +32,21 @@ $dotnet\
 $elixir\
 $elm\
 $erlang\
+$fennel\
 $golang\
+$guix_shell\
 $haskell\
+$haxe\
 $helm\
 $java\
 $julia\
 $kotlin\
+$gradle\
 $lua\
 $nim\
 $nodejs\
 $ocaml\
+$opa\
 $perl\
 $php\
 $pulumi\
@@ -45,8 +58,10 @@ $red\
 $ruby\
 $rust\
 $scala\
+$solidity\
 $swift\
 $terraform\
+$typst\
 $vlang\
 $vagrant\
 $zig\
@@ -60,7 +75,7 @@ $aws\
 $gcloud\
 $openstack\
 $azure\
-$kubernetes\
+$direnv\
 $env_var\
 $crystal\
 $custom\
@@ -71,102 +86,45 @@ $jobs\
 $battery\
 $time\
 $status\
+$os\
 $container\
 $shell\
-$character"""
+$character'''
+
+scan_timeout = 100
+command_timeout = 1000
+
+[line_break]
+disabled = true
 
 [aws]
 disabled = true
-symbol = "  "
-
-[buf]
-symbol = " "
-
-[c]
-symbol = " "
-
-[conda]
-symbol = " "
-
-[dart]
-symbol = " "
 
 [directory]
-truncation_symbol = " "
-read_only = " "
+truncation_symbol = ' '
+read_only = ' '
 
 [docker_context]
-symbol = " "
-
-[elixir]
-symbol = " "
-
-[elm]
-symbol = " "
+disabled = true
+symbol = ' '
 
 [gcloud]
-symbol = " "
-format = 'on [$symbol$account(@$domain)(\($project\))]($style) '
+symbol = 'gcloud'
+style = 'bold fg:#58A65C'
+format = '[$symbol:\($project\)]($style) '
 
 [git_branch]
-symbol = " "
+symbol = ' '
 
 [golang]
 disabled = true
-symbol = " "
-
-[haskell]
-symbol = " "
-
-[hg_branch]
-symbol = " "
-
-[java]
-symbol = " "
-
-[julia]
-symbol = " "
+symbol = ' '
 
 [kubernetes]
-symbol = "󱃾"
+symbol = 'kubernetes'
 disabled = false
-format = 'on [$symbol$context]($style) '
-
-[lua]
-symbol = " "
-
-[memory_usage]
-symbol = " "
-
-[meson]
-symbol = "喝 "
-
-[nim]
-symbol = " "
-
-[nix_shell]
-symbol = " "
+style = 'bold fg:#3F68D6'
+format = '[$symbol:\($context\)]($style) '
 
 [nodejs]
-symbol = " "
-
-[package]
-symbol = " "
-
-[python]
-symbol = " "
-
-[rlang]
-symbol = "ﳒ "
-
-[ruby]
-symbol = " "
-
-[rust]
-symbol = " "
-
-[scala]
-symbol = " "
-
-[spack]
-symbol = "🅢 "
+symbol = ' '

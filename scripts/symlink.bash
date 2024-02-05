@@ -16,6 +16,7 @@ echo "----------------------------------------------"
 # dotfiles
 echo "=> Symlink dotfiles cli utility"
 ln -sf ${DOTFILES_DIR}/utilities/dotfiles.zsh /usr/local/bin/dotfiles
+ln -sf ${DOTFILES_DIR}/utilities/goland.zsh /usr/local/bin/goland
 
 # editorconfig
 echo "=> Symlink Editor Config"
@@ -49,13 +50,9 @@ ln -sf ${DOTFILES_DIR}/starship.toml ${HOME_DIR}/.config/starship.toml
 echo "=> Symlink Visual Studio Configuration"
 ln -sf "${DOTFILES_DIR}/apps/visual-studio-code/settings.json" "${HOME_DIR}/Library/Application Support/Code/User/settings.json"
 
-# iterm2
-echo "=> Symlink iTerm2 Configuration"
-ln -sf "${DOTFILES_DIR}/apps/iterm2/com.googlecode.iterm2.plist" "${HOME_DIR}/Library/Preferences/com.googlecode.iterm2.plist"
-
-# better snap tool
-echo "=> Symlink Better Snap Tool Configuration"
-ln -sf "${DOTFILES_DIR}/apps/better-snap-tool/com.hegenberg.BetterSnapTool.plist" "${HOME_DIR}/Library/Preferences/com.hegenberg.BetterSnapTool.plist"
+# warp
+echo "=> Symlink Warp Configuration"
+ln -sf ${DOTFILES_DIR}/apps/warp ${HOME_DIR}/.warp
 
 # gpg
 echo "=> Symlink GPG Configuration"

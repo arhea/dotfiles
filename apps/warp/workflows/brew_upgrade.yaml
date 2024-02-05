@@ -1,0 +1,9 @@
+name: Brew Update and Upgrade
+command: brew update && brew upgrade && brew cleanup && brew doctor
+tags:
+  - brew
+description: "Updates all brew packages and cleans up old versions."
+source_url: ""
+author: Alex Rhea
+author_url: "https://github.com/arhea"
+shells: []
