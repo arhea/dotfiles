@@ -6,11 +6,7 @@ scan_timeout = 100
 command_timeout = 1000
 
 format = '''
-$username\
-$hostname\
-$localip\
-$shlvl\
-$directory\
+$username$hostname$localip$shlvl$directory\
 $git_branch\
 $git_commit\
 $git_state\
